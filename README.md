@@ -1,2 +1,2 @@
 # johannesreimer.github.io
-## Private website using GitHub Pages
+Private website using GitHub Pages

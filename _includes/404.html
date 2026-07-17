@@ -1,0 +1,33 @@
+<section class="section">
+  <h1>404</h1>
+  
+  <article class="section" lang="{{ lang }}">
+    <h2>Page not found</h2>
+    <p>The page you requested doesn't exist.</p>
+    <p>Simply go back to the homepage or contact me:</p>
+    <p>
+      <a href="{{ '/' | relative_url }}" title="Homepage">Homepage</a>
+      •
+      <a href="mailto:jreimer.mail@gmail.com" title="Contact">Contact</a>
+    </p>
+  </article>
+
+  <!-- {% assign translations = site.data.dictionary %}
+  {% for lang in "de,en" | split: "," %}
+    {% assign t = translations[lang] %}
+    <article class="section" lang="{{ lang }}">
+      <h2>{{ t.pageNotFound }}</h2>
+      <p>{{ t.pageNotFoundDescription }}</p>
+      <p>{{ t.pageNotFoundAction }}</p>
+      <p>
+        <a href="{{ '/' | relative_url }}" title="{{ t.homepage }}">{{ t.homepage }}</a>
+        •
+        <a href="mailto:johannes.reimer@mailbox.tu-dresden.de" title="{{ t.contact }}">{{ t.contact }}</a>
+      </p>
+    </article>
+  {% endfor %} -->
+  
+  <p class="huge-code">
+      :-(
+  </p>
+</section>

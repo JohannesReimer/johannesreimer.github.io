@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title | default: site.title }}</title>
+  {% include favicon.html %}
+  {% include styles.html %}
+</head>
+<body>
+  <div class="site-wrapper">
+    {% include navigation.html %}
+
+    <main>
+      {{ content }}
+    </main>
+
+    {% include footer.html %}
+  </div>
+
+  {% include scripts.html %}
+</body>
+</html>

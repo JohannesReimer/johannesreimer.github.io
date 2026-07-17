@@ -1,0 +1,420 @@
+/* =============================================
+   Base reset & typography
+   ============================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --font-base: "Noto Sans", sans-serif;
+  --font-h1: "Literata", serif;
+  --font-heading: "Cousine", monospace;
+  --font-hyperlink: "Cousine", monospace;
+
+  --primary-blue: #004b7f;
+  --accent-green: #afc676;
+  --accent-lime: #f9f871;
+  --accent-teal: #597a78;
+  --light-teal: #ccdad9;
+  --light-green: #f2f6e7;
+  --gray: #7f7f7f;
+  --text-blue: #00305e;
+  --accent-teal-35: rgba(89, 122, 120, 0.35);
+  --accent-teal-65: rgba(89, 122, 120, 0.65);
+  --primary-blue-35: rgba(0, 75, 127, 0.35);
+  --accent-green-35: rgba(175, 198, 118, 0.35);
+  --accent-green-light: #d9e4be;
+  --nav-height: 56px;
+
+  --gradient-green: radial-gradient(
+      circle at top left,
+      rgba(175, 198, 118, 0.2) 0%,
+      rgba(249, 248, 113, 0.2) 100%
+    ),
+    #ffffff;
+  --gradient-blue: radial-gradient(
+      circle at top left,
+      rgba(0, 48, 94, 0.05) 0%,
+      rgba(204, 218, 217, 0.4) 100%
+    ),
+    #ffffff;
+}
+
+body {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  font-family: var(--font-base);
+  color: var(--text-blue);
+  background: var(--gradient-green);
+  line-height: 1.7;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("../assets/images/texture_paper_landscape.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  mix-blend-mode: multiply;
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 0;
+}
+
+a {
+  color: var(--accent-teal);
+  text-decoration: none;
+  font-family: var(--font-hyperlink);
+}
+
+a:hover {
+  /* text-decoration: underline; */
+  font-weight: bold;
+}
+
+/* =============================================
+   Layout
+   ============================================= */
+.site-wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  max-width: 900px;
+  width: 100%;
+  margin: calc(var(--nav-height) + 2rem) auto 2rem;
+  padding: 0 1.5rem;
+}
+
+/* =============================================
+   Navigation
+   ============================================= */
+nav {
+  background-color: var(--accent-green-light);
+  border-bottom: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 100;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  min-height: var(--nav-height);
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+nav ul li a {
+  display: block;
+  padding: 1rem 1.2rem;
+  color: var(--accent-teal);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: color 0.2s;
+}
+
+nav ul li a:hover {
+  color: var(--accent-teal-65);
+  text-decoration: none;
+}
+
+nav ul li a.active {
+  text-decoration: underline;
+}
+
+/* =============================================
+   Page headings
+   ============================================= */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--accent-blue);
+}
+
+section[id] {
+  scroll-margin-top: calc(var(--nav-height) + 1rem);
+}
+
+h1 {
+  font-family: var(--font-h1);
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: italic;
+  position: relative;
+  display: inline-block;
+  font-size: 1.8rem;
+  line-height: 1.05;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  height: 6px;
+  background-color: var(--accent-teal-35);
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+h3 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+p {
+  margin-bottom: 0.75rem;
+}
+
+/* =============================================
+   Sections
+   ============================================= */
+.section {
+  margin-bottom: 2.5rem;
+}
+
+/* =============================================
+   Home page – profile block
+   ============================================= */
+.profile {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.profile-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: var(--primary-blue);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-blue);
+  font-size: 0.8rem;
+  font-family: var(--font-base);
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+/* =============================================
+   Social media links
+   ============================================= */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 1.05rem;
+  color: var(--light-green);
+  background-color: var(--accent-teal);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.social-link:hover {
+  color: var(--light-green);
+  background-color: var(--accent-teal-65);
+  text-decoration: none;
+}
+
+/* =============================================
+   CV entries
+   ============================================= */
+.cv-entry {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.cv-entry .year {
+  min-width: 90px;
+  color: var(--text-blue);
+  font-family: var(--font-base);
+  font-size: 0.9rem;
+  padding-top: 0.05rem;
+}
+
+.cv-entry .details {
+  flex: 1;
+}
+
+/* =============================================
+   Download button
+   ============================================= */
+.btn-download {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  background-color: var(--light-teal);
+  color: var(--text-blue);
+  border-radius: 4px;
+  font-family: var(--font-base);
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.btn-download:hover {
+  background-color: var(--accent-green);
+  text-decoration: none;
+  color: var(--text-blue);
+}
+
+/* =============================================
+   Publication entries
+   ============================================= */
+.pub-entry {
+  margin-bottom: 1.25rem;
+  padding-left: 1rem;
+  border-left: 4px solid var(--primary-blue-35);
+}
+
+/* =============================================
+   To-Do list
+   ============================================= */
+.todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0;
+  font-family: var(--font-base);
+  font-size: 0.95rem;
+  color: var(--text-blue);
+}
+
+.todo-list li::before {
+  content: "☐";
+  font-size: 1.1rem;
+  color: var(--text-blue);
+}
+
+/* =============================================
+   Special text style
+   ============================================= */
+.placeholder {
+  color: var(--text-blue);
+  font-style: italic;
+}
+.huge-code {
+  color: var(--accent-teal-35);
+  font-family: var(--font-heading);
+  font-size: 6rem;
+}
+
+/* =============================================
+   Footer
+   ============================================= */
+footer {
+  text-align: center;
+  padding: 1.2rem;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  color: var(--text-blue);
+  border-top: 1px solid var(--gray);
+}
+
+/* =============================================
+   Responsive
+   ============================================= */
+@media (max-width: 540px) {
+  :root {
+    --nav-height: 88px;
+  }
+
+  .profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .cv-entry {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+  }
+
+  nav ul li a {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
