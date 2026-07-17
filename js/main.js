@@ -4,6 +4,26 @@
  */
 document.getElementById("year").textContent = new Date().getFullYear();
 
+document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.querySelector(".nav-toggle");
+    const menu = document.querySelector(".nav-menu");
+    const links = document.querySelectorAll(".nav-menu a");
+
+    // Toggle menu open/close
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("active");
+      toggle.classList.toggle("active");
+    });
+
+    // Close menu after clicking a link
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("active");
+        toggle.classList.remove("active");
+      });
+    });
+  });
+
 (function () {
   "use strict";
 
