@@ -5,7 +5,7 @@ Mozartstr. 10\
 01219 Dresden\
 Germany
 
-Telefon: [+49 174 9273954](tel:+491749273954) • E-Mail: [jreimer.mail@gmail.com](mailto:jreimer.mail@gmail.com)  
+Telefon: [+49 152 32711588](tel:+4915232711588) • E-Mail: [jreimer.mail@gmail.com](mailto:jreimer.mail@gmail.com)  
 
 ### Haftung für Inhalte
 
