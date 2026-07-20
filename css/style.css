@@ -517,7 +517,7 @@ footer {
   }
 
   .nav-menu {
-    display: none;
+    display: flex;
     position: absolute;
     top: 100%; /* direkt unter der Nav-Leiste */
     left: 0;
@@ -526,12 +526,31 @@ footer {
     gap: 0.5rem;
     max-width: none;
     margin: 0;
-    background: var(--background-color, white);
+    background: var(--nav-background);
     padding: 1rem 0;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-0.75rem);
+    visibility: hidden;
+    pointer-events: none;
+    transition: max-height 0.28s ease, opacity 0.22s ease, transform 0.28s ease, visibility 0s linear 0.28s;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
 
   .nav-menu.active {
-    display: flex;
+    max-height: 24rem;
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto;
+    transition: max-height 0.28s ease, opacity 0.22s ease, transform 0.28s ease;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-menu,
+  .nav-menu.active {
+    transition: none;
   }
 }
