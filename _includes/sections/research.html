@@ -28,13 +28,13 @@
 					{% assign has_doi = publication.doi %}
 					{% assign has_isbn = publication.isbn %}
 					<div class="pub-entry">
-						{% if localized_contributors %}
-							<p><strong>{{ publication.date }}</strong> • {{ highlighted_contributors }}</p>
-						{% else %}
-							<p><strong>{{ publication.date }}</strong></p>
-						{% endif %}
-
 						<p>
+							{% if localized_contributors %}
+								<strong>{{ publication.date }}</strong> • {{ highlighted_contributors }}<br>
+							{% else %}
+								<strong>{{ publication.date }}</strong><br>
+							{% endif %}
+
 							{{ localized_title }}
 							{% if has_url or has_doi or has_isbn %} • {% endif %}
 							{% if has_url %}
@@ -85,15 +85,15 @@
 									<i class="fa-solid fa-envelope" aria-hidden="true"></i>
 								</a>
 							{% endunless %}
+
+							{% if localized_venue %}
+								<br><em>{{ localized_venue }}</em>
+							{% endif %}
+
+							{% if localized_description %}
+								<br><em>{{ localized_description }}</em>
+							{% endif %}
 						</p>
-
-						{% if localized_venue %}
-							<p><em>{{ localized_venue }}</em></p>
-						{% endif %}
-
-						{% if localized_description %}
-							<p><em>{{ localized_description }}</em></p>
-						{% endif %}
 					</div>
 				{% endfor %}
 			{% else %}
@@ -118,13 +118,13 @@
 					{% assign has_doi = publication.doi %}
 					{% assign has_isbn = publication.isbn %}
 					<div class="pub-entry">
-						{% if localized_contributors %}
-							<p><strong>{{ publication.date }}</strong> • {{ highlighted_contributors }}</p>
-						{% else %}
-							<p><strong>{{ publication.date }}</strong></p>
-						{% endif %}
-
 						<p>
+							{% if localized_contributors %}
+								<strong>{{ publication.date }}</strong> • {{ highlighted_contributors }}<br>
+							{% else %}
+								<strong>{{ publication.date }}</strong><br>
+							{% endif %}
+
 							{{ localized_title }}
 							{% if has_url or has_doi or has_isbn %} • {% endif %}
 							{% if has_url %}
@@ -175,15 +175,15 @@
 									<i class="fa-solid fa-envelope" aria-hidden="true"></i>
 								</a>
 							{% endunless %}
+
+							{% if localized_venue %}
+								<br><em>{{ localized_venue }}</em>
+							{% endif %}
+
+							{% if localized_description %}
+								<br><em>{{ localized_description }}</em>
+							{% endif %}
 						</p>
-
-						{% if localized_venue %}
-							<p><em>{{ localized_venue }}</em></p>
-						{% endif %}
-
-						{% if localized_description %}
-							<p><em>{{ localized_description }}</em></p>
-						{% endif %}
 					</div>
 				{% endfor %}
 			{% else %}
@@ -208,13 +208,13 @@
 					{% assign has_doi = publication.doi %}
 					{% assign has_isbn = publication.isbn %}
 					<div class="pub-entry">
-						{% if localized_contributors %}
-							<p><strong>{{ publication.date }}</strong> • {{ highlighted_contributors }}</p>
-						{% else %}
-							<p><strong>{{ publication.date }}</strong></p>
-						{% endif %}
-
 						<p>
+							{% if localized_contributors %}
+								<strong>{{ publication.date }}</strong> • {{ highlighted_contributors }}<br>
+							{% else %}
+								<strong>{{ publication.date }}</strong><br>
+							{% endif %}
+
 							{{ localized_title }}
 							{% if has_url or has_doi or has_isbn %} • {% endif %}
 							{% if has_url %}
@@ -265,15 +265,15 @@
 									<i class="fa-solid fa-envelope" aria-hidden="true"></i>
 								</a>
 							{% endunless %}
+
+							{% if localized_venue %}
+								<br><em>{{ localized_venue }}</em>
+							{% endif %}
+
+							{% if localized_description %}
+								<br><em>{{ localized_description }}</em>
+							{% endif %}
 						</p>
-
-						{% if localized_venue %}
-							<p><em>{{ localized_venue }}</em></p>
-						{% endif %}
-
-						{% if localized_description %}
-							<p><em>{{ localized_description }}</em></p>
-						{% endif %}
 					</div>
 				{% endfor %}
 			{% else %}
