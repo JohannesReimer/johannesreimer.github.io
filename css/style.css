@@ -258,7 +258,7 @@ h1::after {
 }
 
 h1 + h1 {
-  margin-top: 0.5rem; /* oder was du willst */
+  margin-top: 0.5rem;
 }
 
 h1 + h2 {
@@ -523,7 +523,7 @@ footer {
   .nav-menu {
     display: flex;
     position: absolute;
-    top: 100%; /* direkt unter der Nav-Leiste */
+    top: 100%;
     left: 0;
     right: 0;
     flex-direction: column;

@@ -1,7 +1,3 @@
-/**
- * main.js - one-page navigation logic.
- * Keeps nav state in sync with active section while scrolling.
- */
 document.getElementById("year").textContent = new Date().getFullYear();
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -10,13 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const links = document.querySelectorAll(".nav-menu a");
 
     if (toggle && menu) {
-      // Toggle menu open/close
       toggle.addEventListener("click", () => {
         menu.classList.toggle("active");
         toggle.classList.toggle("active");
       });
 
-      // Close menu after clicking a link
       links.forEach(link => {
         link.addEventListener("click", () => {
           menu.classList.remove("active");
