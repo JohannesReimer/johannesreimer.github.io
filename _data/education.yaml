@@ -1,0 +1,92 @@
+- from:
+    year: 2024
+    month: 10
+  # to:
+  #   year: YEAR_TO
+  #   month: MONTH_TO
+  institution:
+    name:
+      i18n: tuDresden
+    url: https://tu-dresden.de/bu/bauingenieurwesen
+  degree:
+    title:
+      i18n: drIng
+    program:
+      i18n: degreeProgramCivilEngineering
+  # thesis:
+  #   title: "THESIS_TITLE"
+  #   thesis: /pdf/THESIS_FILE.pdf
+  #   slides: /pdf/THESIS_SLIDES.pdf
+  # note: GRADE
+  # certificate: /pdf/CERTIFICATE_FILE.pdf
+  topic:
+    i18n: drIngTopic
+
+- from:
+    year: 2017
+    month: 10
+  to:
+    year: 2023
+    month: 11
+  institution:
+    name:
+      i18n: tuDresden
+    url: https://tu-dresden.de/bu/bauingenieurwesen
+  degree:
+    title: "Dipl.-Ing."
+    program:
+      i18n: degreeProgramCivilEngineering
+  thesis:
+    title:
+      i18n: diplomaThesisTitle
+    # thesis: /pdf/THESIS_FILE.pdf
+    # slides: /pdf/THESIS_SLIDES.pdf
+  note: 2.0
+  # certificate: /pdf/CERTIFICATE_FILE.pdf
+
+- from:
+    year: 2013
+    month: 8
+  to:
+    year: 2014
+    month: 6
+  institution:
+    name: "Colegio Alemán Alexander von Humboldt"
+    url: https://humboldt.edu.mx/de/home-de
+  degree:
+    title:
+      i18n: yearAbroad
+
+- from:
+    year: 2008
+    month: 8
+  to:
+    year: 2016
+    month: 6
+  institution:
+    name: "Gymnasium Martino-Katharineum Braunschweig"
+    url: https://mk-braunschweig.de
+  degree:
+    title: "Abitur"
+  note: 1.9
+  # certificate: /pdf/CERTIFICATE_FILE.pdf
+
+# - from:
+#     year: YEAR_FROM
+#     month: MONTH_FROM
+#   to:
+#     year: YEAR_TO
+#     month: MONTH_TO
+#   institution:
+#     name: "INSTITUTION_NAME"
+#     url: INSTITUTION_URL
+#   degree:
+#     title: "DEGREE_SHORT"
+#     program: "DEGREE_TITLE"
+#   thesis:
+#     title: "THESIS_TITLE"
+#     thesis: /pdf/THESIS_FILE.pdf
+#     slides: /pdf/THESIS_SLIDES.pdf
+#   note: GRADE_IN_DECIMAL
+#   certificate: /pdf/CERTIFICATE_FILE.pdf
+#   topic: "EDUCATION_TOPIC"

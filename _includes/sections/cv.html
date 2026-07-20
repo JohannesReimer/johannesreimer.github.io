@@ -1,0 +1,206 @@
+<h1 data-i18n="cvLong">{{ site.data.dictionary.de.cvLong }}</h1>
+
+{% assign cv_languages = "de,en" | split: "," %}
+{% assign experience_entries = site.data.experience %}
+{% assign education_entries = site.data.education %}
+{% assign awards_entries = site.data.awards | sort: "date" | reverse %}
+
+{% for lang in cv_languages %}
+  <div class="section" data-i18n-lang="{{ lang }}" {% unless lang == "de" %}hidden{% endunless %}>
+    <h2>TL;DR:</h2>
+    <ul>
+      <li>{{ site.data.dictionary[lang].tldrEducation }}</li>
+      <li>{{ site.data.dictionary[lang].tldrExperience }}</li>
+      <li>{{ site.data.dictionary[lang].tldrAwards }}</li>
+      <li>{{ site.data.dictionary[lang].tldrSkills }}</li>
+    </ul>
+
+    <h2>{% if lang == "de" %}Ausbildung{% else %}Education{% endif %}</h2>
+
+    {% if education_entries and education_entries.size > 0 %}
+      {% for education in education_entries %}
+        {% assign from_year = education.from.year %}
+        {% assign from_month = education.from.month %}
+        {% if from_month %}
+          {% assign from_month_padded = from_month | prepend: '00' | slice: -2, 2 %}
+          {% assign from_date = from_year | append: '-' | append: from_month_padded %}
+        {% else %}
+          {% assign from_date = from_year %}
+        {% endif %}
+
+        {% assign to_year = education.to.year %}
+        {% assign to_month = education.to.month %}
+        {% if to_year %}
+          {% if to_month %}
+            {% assign to_month_padded = to_month | prepend: '00' | slice: -2, 2 %}
+            {% assign to_date = to_year | append: '-' | append: to_month_padded %}
+          {% else %}
+            {% assign to_date = to_year %}
+          {% endif %}
+          {% assign period = from_date | append: ' - ' | append: to_date %}
+        {% else %}
+          {% assign period = site.data.dictionary[lang].sinceUC | append: ' ' | append: from_date %}
+        {% endif %}
+
+        {% assign institution_name = education.institution.name %}
+        {% if education.institution.name.i18n %}
+          {% assign institution_name = site.data.dictionary[lang][education.institution.name.i18n] | default: education.institution.name.i18n %}
+        {% endif %}
+
+        {% assign degree_title = education.degree.title %}
+        {% if education.degree.title.i18n %}
+          {% assign degree_title = site.data.dictionary[lang][education.degree.title.i18n] | default: education.degree.title.i18n %}
+        {% endif %}
+
+        {% assign degree_program = education.degree.program %}
+        {% if education.degree.program and education.degree.program.i18n %}
+          {% assign degree_program = site.data.dictionary[lang][education.degree.program.i18n] | default: education.degree.program.i18n %}
+        {% endif %}
+
+        {% assign education_note = education.note %}
+        {% if lang == "de" and education_note %}
+          {% assign education_note = education_note | replace: '.', ',' %}
+        {% endif %}
+
+        {% assign thesis_title = education.thesis.title %}
+        {% if education.thesis and education.thesis.title and education.thesis.title.i18n %}
+          {% assign thesis_title = site.data.dictionary[lang][education.thesis.title.i18n] | default: education.thesis.title.i18n %}
+        {% endif %}
+
+        {% assign topic_text = education.topic %}
+        {% if education.topic and education.topic.i18n %}
+          {% assign topic_text = site.data.dictionary[lang][education.topic.i18n] | default: education.topic.i18n %}
+        {% endif %}
+
+        {% assign institution_url = education.institution.url %}
+        {% if institution_url %}
+          {% unless institution_url contains '://' %}
+            {% assign institution_url = 'https://' | append: institution_url %}
+          {% endunless %}
+        {% endif %}
+
+        <div class="pub-entry">
+          <p>
+            <strong>{{ period }}</strong> • {{ degree_title }}{% if degree_program %} • {{ degree_program }}{% endif %}{% if education_note %} • {{ education_note }}{% endif %}<br>
+            <em>{{ institution_name }}</em>
+            {% if institution_url %}
+              •
+              <a href="{{ institution_url }}" target="_blank" rel="noopener noreferrer" aria-label="Institution link" title="Institution link">
+                <i class="fa-solid fa-link" aria-hidden="true"></i>
+              </a>
+            {% endif %}
+
+            {% if topic_text %}
+              <br>{{ site.data.dictionary[lang].topic }}: {{ topic_text }}
+            {% endif %}
+
+            {% if thesis_title %}
+              <br>{{ site.data.dictionary[lang].thesis }}: {{ thesis_title }}
+            {% endif %}
+          </p>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>{% if lang == "de" %}Keine Ausbildungseinträge gefunden.{% else %}No education entries found.{% endif %}</p>
+    {% endif %}
+
+    <h2>{% if lang == "de" %}Berufserfahrung{% else %}Experience{% endif %}</h2>
+
+    {% if experience_entries and experience_entries.size > 0 %}
+      {% for experience in experience_entries %}
+        {% assign from_year = experience.from.year %}
+        {% assign from_month = experience.from.month %}
+        {% if from_month %}
+          {% assign from_month_padded = from_month | prepend: '00' | slice: -2, 2 %}
+          {% assign from_date = from_year | append: '-' | append: from_month_padded %}
+        {% else %}
+          {% assign from_date = from_year %}
+        {% endif %}
+
+        {% assign to_year = experience.to.year %}
+        {% assign to_month = experience.to.month %}
+        {% if to_year %}
+          {% if to_month %}
+            {% assign to_month_padded = to_month | prepend: '00' | slice: -2, 2 %}
+            {% assign to_date = to_year | append: '-' | append: to_month_padded %}
+          {% else %}
+            {% assign to_date = to_year %}
+          {% endif %}
+          {% assign period = from_date | append: ' – ' | append: to_date %}
+        {% else %}
+          {% assign period = site.data.dictionary[lang].sinceUC | append: ' ' | append: from_date %}
+        {% endif %}
+
+        {% assign company_name = experience.company.name %}
+        {% if experience.company.name.i18n %}
+          {% assign company_name = site.data.dictionary[lang][experience.company.name.i18n] | default: experience.company.name.i18n %}
+        {% endif %}
+
+        {% assign job_title = experience.job.title | default: experience.job.i18n %}
+        {% if experience.job.i18n %}
+          {% assign job_title = site.data.dictionary[lang][experience.job.i18n] | default: experience.job.i18n %}
+        {% endif %}
+
+        {% assign company_url = experience.company.url %}
+        {% if company_url %}
+          {% unless company_url contains '://' %}
+            {% assign company_url = 'https://' | append: company_url %}
+          {% endunless %}
+        {% endif %}
+
+        <div class="pub-entry">
+          <p>
+            <strong>{{ period }}</strong> • {{ job_title }}<br>
+            <em>{{ company_name }}</em>
+            {% if company_url %}
+              •
+              <a href="{{ company_url }}" target="_blank" rel="noopener noreferrer" aria-label="Company link" title="Company link">
+                <i class="fa-solid fa-link" aria-hidden="true"></i>
+              </a>
+            {% endif %}
+          </p>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>{% if lang == "de" %}Keine Einträge zur Berufserfahrung gefunden.{% else %}No experience entries found.{% endif %}</p>
+    {% endif %}
+
+    <h2 data-i18n="awards">{{ site.data.dictionary.de.awards }}</h2>
+
+    {% if awards_entries and awards_entries.size > 0 %}
+      {% for award in awards_entries %}
+        <div class="pub-entry">
+          <p>
+            <strong>{{ award.date }}</strong> • {{ award.title[lang] }}
+            {% if award.value and award.value.sum and award.value.unit %}
+              {% if lang == "de" %}
+                • {{ award.value.sum }} {{ award.value.unit }}
+              {% else %}
+                • {{ award.value.unit }} {{ award.value.sum }}
+              {% endif %}
+            {% endif %}
+
+            {% if award.url %}
+              •
+              <a
+                href="{{ award.url }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="{% if lang == 'de' %}Link zur Auszeichnung{% else %}Award link{% endif %}"
+                title="{% if lang == 'de' %}Link zur Auszeichnung{% else %}Award link{% endif %}"
+              >
+                <i class="fa-solid fa-link" aria-hidden="true"></i>
+              </a>
+            {% endif %}
+
+            {% if award.description and award.description[lang] %}
+              <br><em>{{ award.description[lang] }}</em>
+            {% endif %}
+          </p>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>{% if lang == "de" %}Keine Auszeichnungen gefunden.{% else %}No awards found.{% endif %}</p>
+    {% endif %}
+  </div>
+{% endfor %}

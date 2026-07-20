@@ -1,0 +1,136 @@
+- from:
+    year: 2024
+    month: 10
+  # to:
+  #   year: YEAR_TO
+  #   month: MONTH_TO
+  company:
+    name:
+      i18n: jobEmployerIMB
+    url: tu-dresden.de/bu/bauingenieurwesen/imb
+  job:
+    i18n: jobTitleIMB
+
+- from:
+    year: 2024
+    month: 9
+  to:
+    year: 2024
+    month: 10
+  company:
+    name: "SGHG Ingenieure GmbH"
+    url: https://sghg-ingenieure.de
+  job:
+    i18n: jobTitleSGHG
+
+- from:
+    year: 2024
+    month: 1
+  to:
+    year: 2024
+    month: 7
+  company:
+    name: "MKP GmbH"
+    url: https://marxkrontal.com
+  job:
+    i18n: jobTitleMKP
+
+- from:
+    year: 2022
+    month: 10
+  to:
+    year: 2023
+    month: 10
+  company:
+    name:
+      i18n: jobEmployerTutoring
+    url: https://tu-dresden.de/zill/das-zentrum/projekte/tutoring
+  job:
+    i18n: jobTitleTutoring
+
+- from:
+    year: 2020
+    month: 4
+  to:
+    year: 2023
+    month: 3
+  company:
+    name:
+      i18n: jobEmployerIMF
+    url: https://tu-dresden.de/bu/bauingenieurwesen/imf
+  job:
+    i18n: jobTitleIMF
+
+- from:
+    year: 2015
+    month: 2
+  to:
+    year: 2019
+    month: 6
+  company:
+    name: "Klasse! Wir singen – Singen e.V."
+    url: https://klasse-wir-singen.de
+  job:
+    i18n: jobTitleKWS
+
+- from:
+    year: 2019
+    month: 3
+  to:
+    year: 2019
+    month: 4
+  company:
+    name: "Tschirpig Bauunternehmen GmbH"
+    url: https://www.tschirpig-bau.de
+  job:
+    i18n: jobTitleInternship
+
+- from:
+    year: 2018
+    month: 8
+  to:
+    year: 2018
+    month: 9
+  company:
+    name: "KEMNA BAU Andreae GmbH & Co. KG"
+    url: https://www.kemna.de
+  job:
+    i18n: jobTitleInternship
+
+- from:
+    year: 2016
+    month: 8
+  to:
+    year: 2017
+    month: 08
+  company:
+    name:
+      i18n: jobEmployerDomBS
+    url: https://www.braunschweigerdom.de
+  job:
+    i18n: jobTitleDomBS
+
+- from:
+    year: 2011
+    month: 9
+  to:
+    year: 2016
+    month: 4
+  company:
+    name:
+      i18n: jobEmployerMkreturn
+    url: https://mk-return.de
+  job:
+    i18n: jobTitleMkreturn
+
+# - from:
+#     year: YEAR_FROM
+#     month: MONTH_FROM
+#   to:
+#     year: YEAR_TO
+#     month: MONTH_TO
+#   company:
+#     name: "COMPANY_NAME"
+#     url: COMPANY_URL
+#   job:
+#     i18n: JOB_I18N_KEY
