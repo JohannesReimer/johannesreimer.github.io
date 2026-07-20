@@ -3,6 +3,13 @@
     <i class="fa-solid fa-bars"></i>
   </button>
 
+  <div class="nav-actions" aria-label="Site controls">
+    <a href="#" id="language-toggle" title="Switch language" aria-label="Switch language">EN</a>
+    <a href="#" id="theme-toggle" title="Switch color theme" aria-label="Switch color theme">
+      <i id="theme-toggle-icon" class="fa-solid fa-moon" aria-hidden="true"></i>
+    </a>
+  </div>
+
   <ul class="nav-menu">
     <li><a href="{{ '/#home' | relative_url }}">Home</a></li>
     <li><a href="{{ '/#research' | relative_url }}" data-i18n="research">{{ site.data.dictionary.de.research }}</a></li>
