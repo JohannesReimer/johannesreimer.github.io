@@ -1,0 +1,111 @@
+- name:
+    i18n: languages
+  items:
+    - name:
+        i18n: skillsGermanNative
+    - name:
+        i18n: skillsEnglishFluent
+    - name:
+        i18n: skillsSpanishIntermediate
+- name:
+    i18n: code
+  items:
+    - name: Python
+      url: https://python.org
+    - name: Matlab
+      url: https://mathworks.com/products/matlab.html
+    - name: Fortran
+      url: https://fortran-lang.org
+    - name: Git
+      url: https://git-scm.com
+    - name: TeX
+      url: https://tug.org
+    - name: HTML
+      url: https://w3.org/html
+    - name: CSS
+      url: https://w3.org/Style/CSS
+    - name: JavaScript
+      url: https://ecma-international.org/publications-and-standards/standards/ecma-262
+    - name: JSON
+      url: https://json.org
+    - name: XML
+      url: https://w3.org/standards/xml
+    - name: Pandas
+      url: https://pandas.pydata.org
+    - name: NumPy
+      url: https://numpy.org
+    - name: Matplotlib
+      url: https://matplotlib.org
+    - name: VS Code
+      url: https://code.visualstudio.com
+- name:
+    i18n: software
+  items:
+    - name: MS Office
+      url: https://www.microsoft.com/en-us/microsoft-365
+    - name: Google Docs
+      url: https://docs.google.com
+    - name: Adobe InDesign
+      url: https://www.adobe.com/products/indesign.html
+    - name: Nemetschek Allplan
+      url: https://www.allplan.com/
+    - name: SOFiSTiK
+      url: https://www.sofistik.com
+    - name: Dlubal RSTAB
+      url: https://www.dlubal.com/en/products/rstab
+    - name: Adobe Lightroom
+      url: https://www.adobe.com/products/photoshop-lightroom.html
+    - name: Gimp
+      url: https://www.gimp.org
+    - name: Inkscape
+      url: https://inkscape.org
+    - name: Figma
+      url: https://figma.com
+    - name: Zoom
+      url: https://zoom.us
+    - name: MS Teams
+      url: https://www.microsoft.com/en-us/microsoft-teams
+    - name: OBS Studio
+      url: https://obsproject.com
+- name:
+    i18n: socialSkills
+  items:
+    - name:
+        i18n: skillsAltBau
+      url: https://altbau-tud.de
+    - name:
+        i18n: skillsStudentsCouncil
+      url: https://tu-dresden.de/bu/bauingenieurwesen/fsr
+    - name:
+        i18n: skillsFacultyCouncil
+      url: https://tu-dresden.de/bu/bauingenieurwesen/die_fakultaet/gremien-und-beauftragte
+    - name:
+        i18n: skillsUniversitySenate
+      url: https://tu-dresden.de/tu-dresden/organisation/gremien-und-beauftragte/senat-senatskommissionen
+- name:
+    i18n: hobbySkills
+  items:
+    - name:
+        i18n: hobbiesPhotography
+      url: https://www.instagram.com/johannes_foto
+    - name:
+        i18n: hobbiesGraphicDesign
+    - name:
+        i18n: hobbiesChoir
+      url: https://cantabile-dresden.de
+    - name:
+        i18n: hobbiesHiking
+    - name:
+        i18n: hobbiesTraveling
+- name:
+    i18n: otherSkills
+  items:
+    - name:
+        i18n: drivingLicenseName
+    - name:
+        i18n: flipchartVisualisation
+# - name:
+#     i18n: serviceReviewer
+#   items:
+#     - name: NAME_JOURNAL_OR_CONFERENCE
+#       url: URL_JOURNAL_OR_CONFERENCE

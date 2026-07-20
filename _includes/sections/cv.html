@@ -4,6 +4,7 @@
 {% assign experience_entries = site.data.experience %}
 {% assign education_entries = site.data.education %}
 {% assign awards_entries = site.data.awards | sort: "date" | reverse %}
+{% assign skills_entries = site.data.skills %}
 
 {% for lang in cv_languages %}
   <div class="section" data-i18n-lang="{{ lang }}" {% unless lang == "de" %}hidden{% endunless %}>
@@ -165,6 +166,40 @@
       <p>{% if lang == "de" %}Keine Einträge zur Berufserfahrung gefunden.{% else %}No experience entries found.{% endif %}</p>
     {% endif %}
 
+    <h2>{% if lang == "de" %}Skills{% else %}Skills{% endif %}</h2>
+
+    {% if skills_entries and skills_entries.size > 0 %}
+      {% for skill_category in skills_entries %}
+        {% assign category_label = skill_category.name %}
+        {% if skill_category.name.i18n %}
+          {% assign category_label = site.data.dictionary[lang][skill_category.name.i18n] | default: skill_category.name.i18n %}
+        {% endif %}
+
+        <div class="pub-entry">
+          <p>
+            <strong>{{ category_label }}</strong>
+            {% if skill_category.items and skill_category.items.size > 0 %}
+              {% for skill_item in skill_category.items %}
+                {% assign item_label = skill_item.name %}
+                {% if skill_item.name.i18n %}
+                  {% assign item_label = site.data.dictionary[lang][skill_item.name.i18n] | default: skill_item.name.i18n %}
+                {% endif %}
+
+                •
+                {% if skill_item.url %}
+                  <a class="skill-item" href="{{ skill_item.url }}" target="_blank" rel="noopener noreferrer">{{ item_label }}</a>
+                {% else %}
+                  <span class="skill-item">{{ item_label }}</span>
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          </p>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>{% if lang == "de" %}Keine Skills gefunden.{% else %}No skills found.{% endif %}</p>
+    {% endif %}
+
     <h2 data-i18n="awards">{{ site.data.dictionary.de.awards }}</h2>
 
     {% if awards_entries and awards_entries.size > 0 %}
@@ -173,10 +208,22 @@
           <p>
             <strong>{{ award.date }}</strong> • {{ award.title[lang] }}
             {% if award.value and award.value.sum and award.value.unit %}
+              {% assign award_sum_number = award.value.sum | plus: 0 %}
+              {% assign award_sum_fixed = award_sum_number | times: 100 | round | divided_by: 100.0 %}
+              {% assign award_sum_parts = award_sum_fixed | append: '' | split: '.' %}
+              {% assign award_sum_integer = award_sum_parts[0] %}
+              {% assign award_sum_fraction = award_sum_parts[1] | default: '00' %}
+              {% if award_sum_fraction.size == 0 %}
+                {% assign award_sum_fraction = '00' %}
+              {% elsif award_sum_fraction.size == 1 %}
+                {% assign award_sum_fraction = award_sum_fraction | append: '0' %}
+              {% endif %}
+              {% assign award_sum_localized = award_sum_integer | append: '.' | append: award_sum_fraction %}
               {% if lang == "de" %}
-                • {{ award.value.sum }} {{ award.value.unit }}
+                {% assign award_sum_localized = award_sum_integer | append: ',' | append: award_sum_fraction %}
+                • {{ award_sum_localized }} {{ award.value.unit }}
               {% else %}
-                • {{ award.value.unit }} {{ award.value.sum }}
+                • {{ award.value.unit }} {{ award_sum_localized }}
               {% endif %}
             {% endif %}
 

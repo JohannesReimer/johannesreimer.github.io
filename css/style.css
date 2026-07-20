@@ -334,6 +334,11 @@ p {
   margin-bottom: 0.75rem;
 }
 
+.skill-item {
+  font-family: var(--font-hyperlink);
+  color: var(--link-color);
+}
+
 /* =============================================
    Text lists
    ============================================= */
