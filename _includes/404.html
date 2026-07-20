@@ -1,32 +1,28 @@
 <section class="section">
   <h1>404</h1>
-  
-  <article class="section" lang="{{ lang }}">
-    <h2>Page not found</h2>
-    <p>The page you requested doesn't exist.</p>
-    <p>Simply go back to the homepage or contact me:</p>
+
+  <article class="section">
+    <h2 data-i18n="pageNotFound">{{ site.data.dictionary.de.pageNotFound }}</h2>
+    <p data-i18n="pageNotFoundDescription">{{ site.data.dictionary.de.pageNotFoundDescription }}</p>
     <p>
-      <a href="{{ '/' | relative_url }}" title="Homepage">Homepage</a>
-      •
-      <a href="mailto:jreimer.mail@gmail.com" title="Contact">Contact</a>
+      <span data-i18n="pageNotFoundAction1">{{ site.data.dictionary.de.pageNotFoundAction1 }}</span>
+      <a
+        href="{{ '/' | relative_url }}"
+        data-i18n="homepage"
+        data-i18n-attr="title:homepage"
+        title="{{ site.data.dictionary.de.homepage }}"
+      >{{ site.data.dictionary.de.homepage }}</a>
+      <span data-i18n="pageNotFoundAction2">{{ site.data.dictionary.de.pageNotFoundAction2 }}</span>
+      <a
+        href="mailto:jreimer.mail@gmail.com"
+        data-i18n="emailLowerCase"
+        data-i18n-attr="title:email"
+        title="{{ site.data.dictionary.de.email }}"
+      >{{ site.data.dictionary.de.emailLowerCase }}</a>
+      .
     </p>
   </article>
 
-  <!-- {% assign translations = site.data.dictionary %}
-  {% for lang in "de,en" | split: "," %}
-    {% assign t = translations[lang] %}
-    <article class="section" lang="{{ lang }}">
-      <h2>{{ t.pageNotFound }}</h2>
-      <p>{{ t.pageNotFoundDescription }}</p>
-      <p>{{ t.pageNotFoundAction }}</p>
-      <p>
-        <a href="{{ '/' | relative_url }}" title="{{ t.homepage }}">{{ t.homepage }}</a>
-        •
-        <a href="mailto:johannes.reimer@mailbox.tu-dresden.de" title="{{ t.contact }}">{{ t.contact }}</a>
-      </p>
-    </article>
-  {% endfor %} -->
-  
   <p class="huge-code">
       :-(
   </p>

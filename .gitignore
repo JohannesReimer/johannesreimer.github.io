@@ -6,9 +6,7 @@ vendor
 
 Gemfile.lock
 
-_includes/sections/activities.html
 _includes/sections/cv.html
-_includes/sections/research.html
 _includes/sections/activities.html
 _includes/sections/todo.html
 _posts

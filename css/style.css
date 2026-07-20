@@ -45,6 +45,41 @@ html {
       rgba(204, 218, 217, 0.4) 100%
     ),
     #ffffff;
+
+  --page-background: var(--gradient-green);
+  --text-color: var(--text-blue);
+  --link-color: var(--accent-teal);
+  --link-hover-color: var(--accent-teal-65);
+  --nav-link-color: var(--link-color);
+  --nav-link-hover-color: var(--link-hover-color);
+  --nav-background: var(--accent-green-light);
+  --footer-border-color: var(--gray);
+  --paper-texture-opacity: 0.45;
+  --paper-texture-filter: none;
+  --social-link-foreground: var(--light-green);
+  --social-link-background: var(--accent-teal);
+  --social-link-hover-background: var(--accent-teal-65);
+}
+
+:root[data-theme="dark"] {
+  --page-background: radial-gradient(
+      circle at top left,
+      rgba(89, 122, 120, 0.18) 0%,
+      rgba(0, 48, 94, 0.32) 100%
+    ),
+    #11171c;
+  --text-color: #dce7e8;
+  --link-color: #b3cccc;
+  --link-hover-color: rgb(113, 138, 135);
+  --nav-link-color: #c9deb7;
+  --nav-link-hover-color: #e7f2d4;
+  --nav-background: #213037;
+  --footer-border-color: #55666d;
+  --paper-texture-opacity: 0.2;
+  --paper-texture-filter: invert(1);
+  --social-link-foreground: var(--light-green);
+  --social-link-background: var(--accent-teal);
+  --social-link-hover-background: var(--accent-teal-65);
 }
 
 body {
@@ -52,8 +87,8 @@ body {
   isolation: isolate;
   min-height: 100vh;
   font-family: var(--font-base);
-  color: var(--text-blue);
-  background: var(--gradient-green);
+  color: var(--text-color);
+  background: var(--page-background);
   line-height: 1.7;
 }
 
@@ -66,19 +101,21 @@ body::before {
   background-size: cover;
   background-repeat: no-repeat;
   mix-blend-mode: multiply;
-  opacity: 0.45;
+  opacity: var(--paper-texture-opacity);
+  filter: var(--paper-texture-filter);
   pointer-events: none;
   z-index: 0;
 }
 
 a {
-  color: var(--accent-teal);
+  color: var(--link-color);
   text-decoration: none;
   font-family: var(--font-hyperlink);
 }
 
 a:hover {
   font-weight: bold;
+  color: var(--link-hover-color);
 }
 
 /* =============================================
@@ -104,7 +141,7 @@ main {
    Navigation
    ============================================= */
 nav {
-  background-color: var(--accent-green-light);
+  background-color: var(--nav-background);
   border-bottom: none;
   position: fixed;
   left: 0;
@@ -126,7 +163,7 @@ nav ul {
 nav ul li a {
   display: block;
   padding: 1rem 1.2rem;
-  color: var(--accent-teal);
+  color: var(--nav-link-color);
   font-family: var(--font-heading);
   font-size: 1rem;
   font-weight: 600;
@@ -135,7 +172,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: var(--accent-teal-65);
+  color: var(--nav-link-hover-color);
   text-decoration: none;
 }
 
@@ -188,6 +225,10 @@ h6 {
   color: var(--accent-blue);
 }
 
+:root[data-theme="dark"] h1 {
+  color: var(--accent-green);
+}
+
 section[id] {
   scroll-margin-top: calc(var(--nav-height) + 1rem);
 }
@@ -220,6 +261,14 @@ h1 + h1 {
   margin-top: 0.5rem; /* oder was du willst */
 }
 
+.author-highlight {
+  display: inline;
+  font-weight: 700;
+  background-color: rgba(175, 198, 118, 0.22);
+  padding: 0 0.12em;
+  border-radius: 0.14em;
+}
+
 h2 {
   font-family: var(--font-heading);
   font-size: 1.2rem;
@@ -246,6 +295,21 @@ h6 {
 
 p {
   margin-bottom: 0.75rem;
+}
+
+/* =============================================
+   Text lists
+   ============================================= */
+main :where(ul, ol):not(.todo-list) {
+  margin: 1rem 0 1.1rem;
+  padding-inline-start: 0;
+  list-style-position: outside;
+}
+
+main :where(ul, ol):not(.todo-list) > li {
+  margin: 0.3rem 0;
+  margin-inline-start: 1.4rem;
+  padding-inline-start: 0.1rem;
 }
 
 /* =============================================
@@ -312,14 +376,14 @@ p {
   padding: 0;
   border-radius: 50%;
   font-size: 1.05rem;
-  color: var(--light-green);
-  background-color: var(--accent-teal);
+  color: var(--social-link-foreground);
+  background-color: var(--social-link-background);
   transition: background-color 0.2s, color 0.2s;
 }
 
 .social-link:hover {
-  color: var(--light-green);
-  background-color: var(--accent-teal-65);
+  color: var(--social-link-foreground);
+  background-color: var(--social-link-hover-background);
   text-decoration: none;
 }
 
@@ -418,8 +482,8 @@ footer {
   padding: 1.2rem;
   font-family: var(--font-heading);
   font-size: 0.8rem;
-  color: var(--text-blue);
-  border-top: 1px solid var(--gray);
+  color: var(--text-color);
+  border-top: 1px solid var(--footer-border-color);
 }
 
 /* =============================================

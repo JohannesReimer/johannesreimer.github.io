@@ -1,0 +1,1 @@
+For legal reasons, this privacy policy is only available in [German]({{ '/privacy.html?lang=de' | relative_url }}).

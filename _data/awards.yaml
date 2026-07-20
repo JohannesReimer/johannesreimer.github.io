@@ -1,0 +1,28 @@
+- date: "2021-09"
+  title:
+    de: "Bestes Tutorium des Sommersemesters 2021 an der TU Dresden"
+    en: "Best Tutorial of Summer Term 2021 at TU Dresden"
+  description:
+    de: "Verliehen durch das Lehrprojekt TUTORING (Kategorie: Technische Umsetzung)."
+    en: "Awarded by education project TUTORING (category: technical implementation)."
+
+- date: "2022-04"
+  title:
+    de: "Bestes Tutorium des Wintersemesters 2021/2022 an der TU Dresden"
+    en: "Best Tutorial of Winter Term 2021/2022 at TU Dresden"
+  description:
+    de: "Verliehen durch das Lehrprojekt TUTORING (Kategorie: Engagement und Lernumgebung)."
+    en: "Awarded by education project TUTORING (category: commitment and learning environment)."
+  url: "https://tu-dresden.de/tu-dresden/karriere/weiterbildung/zentrum-fuer-weiterbildung/tutoring/bestes-tutorium"
+
+- date: "2022-12-14"
+  title:
+    de: "Studentischer Lehrpreis der TU Dresden 2022"
+    en: "TU Dresden Student Teaching Award 2022"
+  description:
+    de: "Verliehen durch die Gesellschaft von Freunden und Foerderern der TU Dresden e. V. (GFF)."
+    en: "Awarded by the Gesellschaft von Freunden und Foerderern der TU Dresden e. V. (GFF)."
+  url: "https://tu-dresden.de/tu-dresden/newsportal/news/lehrpreise#"
+  value:
+    sum: 2000
+    unit: "€"

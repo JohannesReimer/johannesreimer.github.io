@@ -1,0 +1,13 @@
+<section class="section" id="license">
+  <h1 data-i18n="imprintTitle">{{ site.data.dictionary.de.imprintTitle }}</h1>
+
+  <div data-i18n-lang="de">
+    {% capture imprint_de %}{% include content/imprint_de.md %}{% endcapture %}
+    {{ imprint_de | markdownify }}
+  </div>
+
+  <div data-i18n-lang="en" hidden>
+    {% capture imprint_en %}{% include content/imprint_en.md %}{% endcapture %}
+    {{ imprint_en | markdownify }}
+  </div>
+</section>

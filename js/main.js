@@ -9,20 +9,170 @@ document.addEventListener("DOMContentLoaded", () => {
     const menu = document.querySelector(".nav-menu");
     const links = document.querySelectorAll(".nav-menu a");
 
-    // Toggle menu open/close
-    toggle.addEventListener("click", () => {
-      menu.classList.toggle("active");
-      toggle.classList.toggle("active");
-    });
+    if (toggle && menu) {
+      // Toggle menu open/close
+      toggle.addEventListener("click", () => {
+        menu.classList.toggle("active");
+        toggle.classList.toggle("active");
+      });
 
-    // Close menu after clicking a link
-    links.forEach(link => {
-      link.addEventListener("click", () => {
-        menu.classList.remove("active");
-        toggle.classList.remove("active");
+      // Close menu after clicking a link
+      links.forEach(link => {
+        link.addEventListener("click", () => {
+          menu.classList.remove("active");
+          toggle.classList.remove("active");
+        });
+      });
+    }
+
+    initThemeToggle();
+    initLanguageToggle();
+  });
+
+function initThemeToggle() {
+  const themeToggle = document.getElementById("theme-toggle");
+  const themeToggleIcon = document.getElementById("theme-toggle-icon");
+
+  if (!themeToggle || !themeToggleIcon) {
+    return;
+  }
+
+  const storageKey = "theme";
+  const themes = ["light", "dark"];
+  const storedTheme = localStorage.getItem(storageKey);
+  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const activeTheme = themes.includes(storedTheme) ? storedTheme : prefersDark ? "dark" : "light";
+
+  function applyTheme(theme) {
+    const resolvedTheme = themes.includes(theme) ? theme : "light";
+    document.documentElement.setAttribute("data-theme", resolvedTheme);
+    localStorage.setItem(storageKey, resolvedTheme);
+
+    const switchToDark = resolvedTheme === "light";
+    themeToggleIcon.classList.remove("fa-sun", "fa-moon");
+    themeToggleIcon.classList.add(switchToDark ? "fa-moon" : "fa-sun");
+    themeToggle.setAttribute("title", switchToDark ? "Switch to dark mode" : "Switch to light mode");
+    themeToggle.setAttribute("aria-label", switchToDark ? "Switch to dark mode" : "Switch to light mode");
+  }
+
+  applyTheme(activeTheme);
+
+  themeToggle.addEventListener("click", function (event) {
+    event.preventDefault();
+    const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
+    applyTheme(currentTheme === "dark" ? "light" : "dark");
+  });
+}
+
+function initLanguageToggle() {
+  const languageToggle = document.getElementById("language-toggle");
+  const dictionaryElement = document.getElementById("i18n-dictionary");
+
+  if (!languageToggle || !dictionaryElement) {
+    return;
+  }
+
+  let dictionary;
+  try {
+    dictionary = JSON.parse(dictionaryElement.textContent || "{}");
+  } catch (error) {
+    return;
+  }
+
+  const defaultLanguage = "de";
+  const storageKey = "language";
+  const supportedLanguages = Object.keys(dictionary);
+  const queryLanguage = new URLSearchParams(window.location.search).get("lang");
+  const isQueryLanguageSupported = supportedLanguages.includes(queryLanguage);
+  if (isQueryLanguageSupported) {
+    localStorage.setItem(storageKey, queryLanguage);
+  }
+  const storedLanguage = localStorage.getItem(storageKey);
+  const activeLanguage = isQueryLanguageSupported
+    ? queryLanguage
+    : supportedLanguages.includes(storedLanguage)
+      ? storedLanguage
+      : defaultLanguage;
+
+  function translateKey(translations, key) {
+    if (!key || !Object.prototype.hasOwnProperty.call(translations, key)) {
+      return null;
+    }
+
+    return translations[key];
+  }
+
+  function applyTextTranslations(translations) {
+    const translatableElements = document.querySelectorAll("[data-i18n]");
+
+    translatableElements.forEach(function (element) {
+      const key = element.getAttribute("data-i18n");
+      const translation = translateKey(translations, key);
+
+      if (translation !== null) {
+        element.innerHTML = translation;
+      }
+    });
+  }
+
+  function applyAttributeTranslations(translations) {
+    const attributeElements = document.querySelectorAll("[data-i18n-attr]");
+
+    attributeElements.forEach(function (element) {
+      const mapping = element.getAttribute("data-i18n-attr");
+      if (!mapping) {
+        return;
+      }
+
+      mapping.split(",").forEach(function (entry) {
+        const pair = entry.split(":");
+        if (pair.length !== 2) {
+          return;
+        }
+
+        const attributeName = pair[0].trim();
+        const key = pair[1].trim();
+        const translation = translateKey(translations, key);
+
+        if (attributeName && translation !== null) {
+          element.setAttribute(attributeName, translation);
+        }
       });
     });
+  }
+
+  function applyLanguageSections(language) {
+    const languageSections = document.querySelectorAll("[data-i18n-lang]");
+
+    languageSections.forEach(function (section) {
+      const sectionLanguage = section.getAttribute("data-i18n-lang");
+      section.hidden = sectionLanguage !== language;
+    });
+  }
+
+  function applyLanguage(language) {
+    const translations = dictionary[language] || {};
+
+    applyTextTranslations(translations);
+    applyAttributeTranslations(translations);
+    applyLanguageSections(language);
+
+    document.documentElement.setAttribute("lang", language);
+    localStorage.setItem(storageKey, language);
+    languageToggle.textContent = language === "de" ? "EN" : "DE";
+    languageToggle.setAttribute("aria-label", language === "de" ? "Switch to English" : "Auf Deutsch wechseln");
+    languageToggle.setAttribute("title", language === "de" ? "Switch to English" : "Auf Deutsch wechseln");
+  }
+
+  applyLanguage(activeLanguage);
+
+  languageToggle.addEventListener("click", function (event) {
+    event.preventDefault();
+    const currentLanguage = localStorage.getItem(storageKey) || defaultLanguage;
+    const nextLanguage = currentLanguage === "de" ? "en" : "de";
+    applyLanguage(nextLanguage);
   });
+}
 
 (function () {
   "use strict";

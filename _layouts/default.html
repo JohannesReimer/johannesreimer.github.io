@@ -4,20 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ page.title | default: site.title }}</title>
-  {% include favicon.html %}
-  {% include styles.html %}
+  {% include partials/favicon.html %}
+  {% include partials/styles.html %}
 </head>
 <body>
   <div class="site-wrapper">
-    {% include navigation.html %}
+    {% include partials/navigation.html %}
 
     <main>
       {{ content }}
     </main>
 
-    {% include footer.html %}
+    {% include partials/footer.html %}
   </div>
 
-  {% include scripts.html %}
+  {% include partials/scripts.html %}
 </body>
 </html>

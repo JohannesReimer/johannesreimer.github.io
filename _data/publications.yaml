@@ -1,0 +1,121 @@
+# Publication entries for the research section.
+# type: paper | conference | other
+# date format: YYYY-MM-DD
+#
+# # Comment ✅⌛
+# - type: paper
+#   date: "2026-01-15"
+#   title: "Publication title"
+#   contributors:
+#     - "First Author"
+#     - "Second Author"
+#     - ""
+#     - ""
+#     - ""
+#   venue: "Journal or series"
+#   url: "https://example.org/publication"
+#   doi: "10.1629/1147"
+#   isbn: "9783598215957"
+#   description:
+#     de: "Optionaler Kurztext"
+#     en: "Optional short description"
+
+# # BuSt 2026 ✅
+# - type: paper
+#   date: "2026-09"
+#   title: "Die ersten Spannbetonbrücken im Freivorbau – Historische Entwicklung und moderner Erhalt"
+#   contributors:
+#     - "J. Reimer"
+#     - "M. Waßmann"
+#     - "C. Eisermann"
+#     - "J. Vogt"
+#     - "C. Voigt"
+#     - "G. Schacht"
+#     - "C. Kang"
+#     - "S. Marx"
+#   venue: "Beton- und Stahlbetonbau"
+#   doi: "10.1002/best.70189"
+
+# AiC 2026 ✅
+- type: paper
+  date: "2026-10"
+  title: "Automated extraction of elevation profiles from limited imagery for bridge design"
+  contributors:
+    - "M. Florek"
+    - "M. Kellner"
+    - "J. Reimer"
+    - "S. Marx"
+    - "A. Reiterer"
+    - "C. Kang"
+  venue: "Automation in Construction"
+  doi: " 10.1016/j.autcon.2026.107126"
+  url: "https://www.researchgate.net/publication/408580588"
+
+# fib 2026 Johannes ⌛
+- type: conference
+  date: "2026-06-15"
+  title: "Design Lineage: The Development of Cantilever Construction for Prestressed Concrete Bridges"
+  contributors:
+    - "J. Reimer"
+    - "J. Vogt"
+    - "C. Kang"
+    - "S. Marx"
+  venue: "7th fib Congress 2026, Lisbon"
+  # isbn: "9783598215957"
+  # description:
+  #   de: "S. XXX-XXX"
+  #   en: "pp. XXX-XXX"
+
+# fib 2026 Jakob ⌛
+- type: conference
+  date: "2026-06-15"
+  title: "Generational development of early prestressing systems and their grouting-related implications for existing structures"
+  contributors:
+    - "J. Vogt"
+    - "J. Reimer"
+    - "M. Müller"
+    - "C. Kang"
+    - "S. Marx"
+  venue: "7th fib Congress 2026, Lisbon"
+  # isbn: "9783598215957"
+  # description:
+  #   de: "S. XXX-XXX"
+  #   en: "pp. XXX-XXX"
+
+# PD 2025 ✅
+- type: other
+  date: "2025-07-01"
+  title: "Handlungsleitfaden Lebenszyklusorientiertes Erhaltungsmanagement kommunaler Brückeninfrastruktur"
+  contributors:
+    - "T. Heinemann"
+    - "H. Ullrich"
+    - "B. Reincke"
+    - "S. Marx"
+    - "J. Reimer"
+  url: "https://www.pd-g.de/assets/Unsere-Expertise/Kommunalberatung/250701_IBA_Handlungsleitfaden.pdf"
+  description:
+    en: "Guideline for Life-Cycle-Based Maintenance Management of Municipal Bridge Infrastructure"
+
+# fib 2025 ✅
+- type: conference
+  date: "2025-06-18"
+  title: "Lost knowledge in construction history – A case study of historical prestressing systems"
+  contributors:
+    - "J. Vogt"
+    - "J. Reimer"
+    - "S. Marx"
+  venue: "fib Symposium 2025, Antibes"
+  isbn: "9782940643295"
+  url: "https://www.researchgate.net/publication/394481224"
+
+# GBTG 2025 ⌛
+- type: conference
+  date: "2025-05"
+  title: "Zur Geschichte des Spannbetonbaus – Entwicklungen nach dem 2. Weltkrieg"
+  contributors:
+    - "J. Vogt"
+    - "J. Reimer"
+    - "S. Marx"
+  venue: "Pflegen. Aktivieren. Retten – 7. Jahrestagung der Gesellschaft für Bautechnikgeschichte, Braunschweig"
+  url: "https://www.researchgate.net/publication/394481004"
+  # isbn: "9783598215957"

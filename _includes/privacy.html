@@ -1,0 +1,13 @@
+<section class="section" id="license">
+  <h1 data-i18n="privacyTitle">{{ site.data.dictionary.de.privacyTitle }}</h1>
+
+  <div data-i18n-lang="de">
+    {% capture privacy_de %}{% include content/privacy_de.md %}{% endcapture %}
+    {{ privacy_de | markdownify }}
+  </div>
+
+  <div data-i18n-lang="en" hidden>
+    {% capture privacy_en %}{% include content/privacy_en.md %}{% endcapture %}
+    {{ privacy_en | markdownify }}
+  </div>
+</section>

@@ -1,0 +1,286 @@
+<h1 data-i18n="research">{{ site.data.dictionary.de.research }}</h1>
+
+{% assign publications = site.data.publications | sort: "date" | reverse %}
+{% assign publication_languages = "de,en" | split: "," %}
+
+{% if publications and publications.size > 0 %}
+	{% for lang in publication_languages %}
+		{% assign papers = publications | where: "type", "paper" %}
+		{% assign conferences = publications | where: "type", "conference" %}
+		{% assign others = publications | where: "type", "other" %}
+
+		<div class="section" data-i18n-lang="{{ lang }}" {% unless lang == "de" %}hidden{% endunless %}>
+			<h2 data-i18n="researchPapers">{{ site.data.dictionary.de.researchPapers }}</h2>
+
+			{% if papers and papers.size > 0 %}
+				{% for publication in papers %}
+					{% assign localized_title = publication.title[lang] | default: publication.title %}
+					{% assign localized_venue = publication.venue[lang] | default: publication.venue %}
+					{% assign localized_description = publication.description[lang] %}
+					{% assign localized_contributors = publication.contributors[lang] | default: publication.contributors %}
+					{% if localized_contributors.first %}
+						{% assign contributors_text = localized_contributors | join: ", " %}
+					{% else %}
+						{% assign contributors_text = localized_contributors %}
+					{% endif %}
+					{% assign highlighted_contributors = contributors_text | replace: "J. Reimer", "<span class='author-highlight'>J. Reimer</span>" %}
+					{% assign has_url = publication.url %}
+					{% assign has_doi = publication.doi %}
+					{% assign has_isbn = publication.isbn %}
+					<div class="pub-entry">
+						{% if localized_contributors %}
+							<p><strong>{{ publication.date }}</strong> • {{ highlighted_contributors }}</p>
+						{% else %}
+							<p><strong>{{ publication.date }}</strong></p>
+						{% endif %}
+
+						<p>
+							{{ localized_title }}
+							{% if has_url or has_doi or has_isbn %} • {% endif %}
+							{% if has_url %}
+								<a
+									href="{{ publication.url }}"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="{% if lang == 'de' %}Link zur Publikation{% else %}Publication link{% endif %}"
+									title="{% if lang == 'de' %}Link zur Publikation{% else %}Publication link{% endif %}"
+								>
+									<i class="fa-solid fa-link" aria-hidden="true"></i>
+								</a>
+							{% endif %}
+
+							{% if has_doi %}
+								{% assign doi_value = publication.doi | strip %}
+								<a
+									href="https://doi.org/{{ doi_value }}"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="DOI: {{ doi_value }}"
+									title="DOI: {{ doi_value }}"
+								>
+									<i class="ai ai-doi" aria-hidden="true"></i>
+								</a>
+							{% endif %}
+
+							{% if has_isbn %}
+								{% assign isbn_value = publication.isbn | strip %}
+								<a
+									href="https://isbnsearch.org/isbn/{{ isbn_value }}"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="ISBN: {{ isbn_value }}"
+									title="ISBN: {{ isbn_value }}"
+								>
+									<i class="fa-solid fa-book" aria-hidden="true"></i>
+								</a>
+							{% endif %}
+
+							{% unless has_url or has_doi or has_isbn %}
+								 •
+								<a
+									href="mailto:{{ site.email }}?subject={% if lang == 'de' %}PDF-Anfrage:{% else %}PDF request:{% endif %} {{ localized_title | url_encode }}"
+									aria-label="{% if lang == 'de' %}PDF per E-Mail anfragen{% else %}Request PDF via email{% endif %}"
+									title="{% if lang == 'de' %}PDF per E-Mail anfragen{% else %}Request PDF via email{% endif %}"
+								>
+									<i class="fa-solid fa-envelope" aria-hidden="true"></i>
+								</a>
+							{% endunless %}
+						</p>
+
+						{% if localized_venue %}
+							<p><em>{{ localized_venue }}</em></p>
+						{% endif %}
+
+						{% if localized_description %}
+							<p><em>{{ localized_description }}</em></p>
+						{% endif %}
+					</div>
+				{% endfor %}
+			{% else %}
+				<p data-i18n="noPapersFound">{{ site.data.dictionary.de.noPapersFound }}</p>
+			{% endif %}
+
+			<h2 data-i18n="conferences">{{ site.data.dictionary.de.conferences }}</h2>
+
+			{% if conferences and conferences.size > 0 %}
+				{% for publication in conferences %}
+					{% assign localized_title = publication.title[lang] | default: publication.title %}
+					{% assign localized_venue = publication.venue[lang] | default: publication.venue %}
+					{% assign localized_description = publication.description[lang] %}
+					{% assign localized_contributors = publication.contributors[lang] | default: publication.contributors %}
+					{% if localized_contributors.first %}
+						{% assign contributors_text = localized_contributors | join: ", " %}
+					{% else %}
+						{% assign contributors_text = localized_contributors %}
+					{% endif %}
+					{% assign highlighted_contributors = contributors_text | replace: "J. Reimer", "<span class='author-highlight'>J. Reimer</span>" %}
+					{% assign has_url = publication.url %}
+					{% assign has_doi = publication.doi %}
+					{% assign has_isbn = publication.isbn %}
+					<div class="pub-entry">
+						{% if localized_contributors %}
+							<p><strong>{{ publication.date }}</strong> • {{ highlighted_contributors }}</p>
+						{% else %}
+							<p><strong>{{ publication.date }}</strong></p>
+						{% endif %}
+
+						<p>
+							{{ localized_title }}
+							{% if has_url or has_doi or has_isbn %} • {% endif %}
+							{% if has_url %}
+								<a
+									href="{{ publication.url }}"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="{% if lang == 'de' %}Link zum Konferenzbeitrag{% else %}Conference link{% endif %}"
+									title="{% if lang == 'de' %}Link zum Konferenzbeitrag{% else %}Conference link{% endif %}"
+								>
+									<i class="fa-solid fa-link" aria-hidden="true"></i>
+								</a>
+							{% endif %}
+
+							{% if has_doi %}
+								{% assign doi_value = publication.doi | strip %}
+								<a
+									href="https://doi.org/{{ doi_value }}"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="DOI: {{ doi_value }}"
+									title="DOI: {{ doi_value }}"
+								>
+									<i class="ai ai-doi" aria-hidden="true"></i>
+								</a>
+							{% endif %}
+
+							{% if has_isbn %}
+								{% assign isbn_value = publication.isbn | strip %}
+								<a
+									href="https://isbnsearch.org/isbn/{{ isbn_value }}"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="ISBN: {{ isbn_value }}"
+									title="ISBN: {{ isbn_value }}"
+								>
+									<i class="fa-solid fa-book" aria-hidden="true"></i>
+								</a>
+							{% endif %}
+
+							{% unless has_url or has_doi or has_isbn %}
+								 •
+								<a
+									href="mailto:{{ site.email }}?subject={% if lang == 'de' %}PDF-Anfrage:{% else %}PDF request:{% endif %} {{ localized_title | url_encode }}"
+									aria-label="{% if lang == 'de' %}PDF per E-Mail anfragen{% else %}Request PDF via email{% endif %}"
+									title="{% if lang == 'de' %}PDF per E-Mail anfragen{% else %}Request PDF via email{% endif %}"
+								>
+									<i class="fa-solid fa-envelope" aria-hidden="true"></i>
+								</a>
+							{% endunless %}
+						</p>
+
+						{% if localized_venue %}
+							<p><em>{{ localized_venue }}</em></p>
+						{% endif %}
+
+						{% if localized_description %}
+							<p><em>{{ localized_description }}</em></p>
+						{% endif %}
+					</div>
+				{% endfor %}
+			{% else %}
+				<p data-i18n="noConferencesFound">{{ site.data.dictionary.de.noConferencesFound }}</p>
+			{% endif %}
+
+			<h2 data-i18n="others">{{ site.data.dictionary.de.others }}</h2>
+
+			{% if others and others.size > 0 %}
+				{% for publication in others %}
+					{% assign localized_title = publication.title[lang] | default: publication.title %}
+					{% assign localized_venue = publication.venue[lang] | default: publication.venue %}
+					{% assign localized_description = publication.description[lang] %}
+					{% assign localized_contributors = publication.contributors[lang] | default: publication.contributors %}
+					{% if localized_contributors.first %}
+						{% assign contributors_text = localized_contributors | join: ", " %}
+					{% else %}
+						{% assign contributors_text = localized_contributors %}
+					{% endif %}
+					{% assign highlighted_contributors = contributors_text | replace: "J. Reimer", "<span class='author-highlight'>J. Reimer</span>" %}
+					{% assign has_url = publication.url %}
+					{% assign has_doi = publication.doi %}
+					{% assign has_isbn = publication.isbn %}
+					<div class="pub-entry">
+						{% if localized_contributors %}
+							<p><strong>{{ publication.date }}</strong> • {{ highlighted_contributors }}</p>
+						{% else %}
+							<p><strong>{{ publication.date }}</strong></p>
+						{% endif %}
+
+						<p>
+							{{ localized_title }}
+							{% if has_url or has_doi or has_isbn %} • {% endif %}
+							{% if has_url %}
+								<a
+									href="{{ publication.url }}"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="{% if lang == 'de' %}Link zum sonstigen Beitrag{% else %}Other publication link{% endif %}"
+									title="{% if lang == 'de' %}Link zum sonstigen Beitrag{% else %}Other publication link{% endif %}"
+								>
+									<i class="fa-solid fa-link" aria-hidden="true"></i>
+								</a>
+							{% endif %}
+
+							{% if has_doi %}
+								{% assign doi_value = publication.doi | strip %}
+								<a
+									href="https://doi.org/{{ doi_value }}"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="DOI: {{ doi_value }}"
+									title="DOI: {{ doi_value }}"
+								>
+									<i class="ai ai-doi" aria-hidden="true"></i>
+								</a>
+							{% endif %}
+
+							{% if has_isbn %}
+								{% assign isbn_value = publication.isbn | strip %}
+								<a
+									href="https://isbnsearch.org/isbn/{{ isbn_value }}"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="ISBN: {{ isbn_value }}"
+									title="ISBN: {{ isbn_value }}"
+								>
+									<i class="fa-solid fa-book" aria-hidden="true"></i>
+								</a>
+							{% endif %}
+
+							{% unless has_url or has_doi or has_isbn %}
+								 •
+								<a
+									href="mailto:{{ site.email }}?subject={% if lang == 'de' %}PDF-Anfrage:{% else %}PDF request:{% endif %} {{ localized_title | url_encode }}"
+									aria-label="{% if lang == 'de' %}PDF per E-Mail anfragen{% else %}Request PDF via email{% endif %}"
+									title="{% if lang == 'de' %}PDF per E-Mail anfragen{% else %}Request PDF via email{% endif %}"
+								>
+									<i class="fa-solid fa-envelope" aria-hidden="true"></i>
+								</a>
+							{% endunless %}
+						</p>
+
+						{% if localized_venue %}
+							<p><em>{{ localized_venue }}</em></p>
+						{% endif %}
+
+						{% if localized_description %}
+							<p><em>{{ localized_description }}</em></p>
+						{% endif %}
+					</div>
+				{% endfor %}
+			{% else %}
+				<p data-i18n="noOthersFound">{{ site.data.dictionary.de.noOthersFound }}</p>
+			{% endif %}
+		</div>
+	{% endfor %}
+{% else %}
+	<p data-i18n="noPublicationsFound">{{ site.data.dictionary.de.noPublicationsFound }}</p>
+{% endif %}
