@@ -9,4 +9,6 @@ Gemfile.lock
 _includes/sections/cv.html
 _includes/sections/activities.html
 _includes/sections/todo.html
+_includes/cv.html
 _posts
+cv.md
