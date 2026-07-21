@@ -9,7 +9,7 @@
 
 {% for lang in cv_languages %}
   <div class="section" data-i18n-lang="{{ lang }}" {% unless lang == "de" %}hidden{% endunless %}>
-    <h2>TL;DR:</h2>
+    <h2><span class='highlight'>TL;DR:</span></h2>
     <ul>
       <li>{{ site.data.dictionary[lang].tldrEducation }}</li>
       <li>{{ site.data.dictionary[lang].tldrExperience }}</li>
