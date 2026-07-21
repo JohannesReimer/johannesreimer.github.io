@@ -171,6 +171,8 @@ nav {
   left: 0;
   right: 0;
   top: 0;
+  width: 100%;
+  max-width: 100vw;
   z-index: 100;
 }
 
@@ -214,7 +216,8 @@ nav ul li a.active {
   left: 0;
   right: 0;
   width: 100%;
-  max-width: 100%;
+  max-width: 100vw;
+  min-height: var(--nav-height);
   z-index: 1000;
 }
 
@@ -586,9 +589,14 @@ footer {
   }
 
   .nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
-    max-width: 100%;
-    overflow-x: clip;
+    max-width: 100vw;
+    min-height: var(--nav-height);
+    overflow: visible;
   }
 
   .nav-actions {
@@ -611,7 +619,6 @@ footer {
     max-width: 100%;
     flex-direction: column;
     gap: 0.5rem;
-    max-width: none;
     margin: 0;
     background: var(--nav-background);
     padding: 1rem;
