@@ -18,6 +18,7 @@
 #   isbn: "9783598215957"
 #   researchgate: "377190300"
 #   pdf: "assets/pdf/file_path_to.pdf"
+#   slides: "assets/pdf/file_path_to_slides.pdf"
 #   description:
 #     de: "Optionaler Kurztext"
 #     en: "Optional short description"
@@ -134,6 +135,7 @@
     - de: "TU Dresden/IMB (Hrsg.)"
       en: "TU Dresden/IMB (ed.)"
   url: "https://web.archive.org/web/20240714183221/https://tu-dresden.de/bu/bauingenieurwesen/imb/ressourcen/dateien/studium/bauingenieurwesen/brueckenbauexkursionen/2022/2022_Exkursionsbericht_Frankreich_web.pdf?lang=en"
+  pdf: "assets/pdf/2022-Brueckenbauexkursion_2022_Frankreich.pdf"
   description:
     de: "Bericht der Brückenbauexkursion des Instituts für Massivbau der TU Dresden 2022 nach Frankreich, 108 S."
     en: "Report of the bridge design field trip of TU Dresden Institute of Concrete Structures 2022 to France, 108 p."

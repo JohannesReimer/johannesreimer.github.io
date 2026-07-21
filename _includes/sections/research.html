@@ -49,6 +49,8 @@
 					{% assign has_doi = publication.doi %}
 					{% assign has_isbn = publication.isbn %}
 					{% assign has_researchgate = publication.researchgate %}
+					{% assign has_pdf = publication.pdf %}
+					{% assign has_slides = publication.slides %}
 					<div class="pub-entry">
 						<p>
 							{% if localized_contributors %}
@@ -58,7 +60,7 @@
 							{% endif %}
 
 							{{ localized_title }}
-							{% if has_url or has_doi or has_isbn or has_researchgate %} • {% endif %}
+							{% if has_url or has_doi or has_isbn or has_researchgate or has_pdf or has_slides %} • {% endif %}
 							{% if has_url %}
 								<a
 									href="{{ publication.url }}"
@@ -110,7 +112,31 @@
 								</a>
 							{% endif %}
 
-							{% unless has_url or has_doi or has_isbn or has_researchgate %}
+							{% if has_pdf %}
+								<a
+									href="{{ publication.pdf }}"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="Original PDF"
+									title="Original PDF"
+								>
+									<i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+								</a>
+							{% endif %}
+
+							{% if has_slides %}
+								<a
+									href="{{ publication.slides }}"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="{% if lang == 'de' %}{{ site.data.dictionary[lang].slides }} (PDF){% else %}{{ site.data.dictionary[lang].slides }} (PDF){% endif %}"
+									title="{% if lang == 'de' %}{{ site.data.dictionary[lang].slides }} (PDF){% else %}{{ site.data.dictionary[lang].slides }} (PDF){% endif %}"
+								>
+									<i class="fa-solid fa-file-powerpoint" aria-hidden="true"></i>
+								</a>
+							{% endif %}
+
+							{% unless has_url or has_doi or has_isbn or has_researchgate or has_pdf or has_slides %}
 								 •
 								<a
 									href="mailto:{{ site.email }}?subject={% if lang == 'de' %}PDF-Anfrage:{% else %}PDF request:{% endif %} {{ localized_title | url_encode }}"
@@ -174,6 +200,8 @@
 					{% assign has_doi = publication.doi %}
 					{% assign has_isbn = publication.isbn %}
 					{% assign has_researchgate = publication.researchgate %}
+					{% assign has_pdf = publication.pdf %}
+					{% assign has_slides = publication.slides %}
 					<div class="pub-entry">
 						<p>
 							{% if localized_contributors %}
@@ -183,7 +211,7 @@
 							{% endif %}
 
 							{{ localized_title }}
-							{% if has_url or has_doi or has_isbn or has_researchgate %} • {% endif %}
+							{% if has_url or has_doi or has_isbn or has_researchgate or has_pdf or has_slides %} • {% endif %}
 							{% if has_url %}
 								<a
 									href="{{ publication.url }}"
@@ -235,7 +263,31 @@
 								</a>
 							{% endif %}
 
-							{% unless has_url or has_doi or has_isbn or has_researchgate %}
+							{% if has_pdf %}
+								<a
+									href="{{ publication.pdf }}"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="Original PDF"
+									title="Original PDF"
+								>
+									<i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+								</a>
+							{% endif %}
+
+							{% if has_slides %}
+								<a
+									href="{{ publication.slides }}"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="{% if lang == 'de' %}{{ site.data.dictionary[lang].slides }} (PDF){% else %}{{ site.data.dictionary[lang].slides }} (PDF){% endif %}"
+									title="{% if lang == 'de' %}{{ site.data.dictionary[lang].slides }} (PDF){% else %}{{ site.data.dictionary[lang].slides }} (PDF){% endif %}"
+								>
+									<i class="fa-solid fa-file-powerpoint" aria-hidden="true"></i>
+								</a>
+							{% endif %}
+
+							{% unless has_url or has_doi or has_isbn or has_researchgate or has_pdf or has_slides %}
 								 •
 								<a
 									href="mailto:{{ site.email }}?subject={% if lang == 'de' %}PDF-Anfrage:{% else %}PDF request:{% endif %} {{ localized_title | url_encode }}"
@@ -299,6 +351,7 @@
 					{% assign has_doi = publication.doi %}
 					{% assign has_isbn = publication.isbn %}
 					{% assign has_researchgate = publication.researchgate %}
+					{% assign has_pdf = publication.pdf %}
 					<div class="pub-entry">
 						<p>
 							{% if localized_contributors %}
@@ -308,7 +361,7 @@
 							{% endif %}
 
 							{{ localized_title }}
-							{% if has_url or has_doi or has_isbn or has_researchgate %} • {% endif %}
+							{% if has_url or has_doi or has_isbn or has_researchgate or has_pdf %} • {% endif %}
 							{% if has_url %}
 								<a
 									href="{{ publication.url }}"
@@ -360,7 +413,19 @@
 								</a>
 							{% endif %}
 
-							{% unless has_url or has_doi or has_isbn or has_researchgate %}
+							{% if has_pdf %}
+								<a
+									href="{{ publication.pdf }}"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="Original PDF"
+									title="Original PDF"
+								>
+									<i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+								</a>
+							{% endif %}
+
+							{% unless has_url or has_doi or has_isbn or has_researchgate or has_pdf %}
 								 •
 								<a
 									href="mailto:{{ site.email }}?subject={% if lang == 'de' %}PDF-Anfrage:{% else %}PDF request:{% endif %} {{ localized_title | url_encode }}"
