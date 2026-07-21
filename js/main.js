@@ -19,9 +19,87 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
+    initGrainCommands();
+    window.addEventListener("resize", debounce(() => {
+      initGrainCommands();
+    }, 150));
     initThemeToggle();
     initLanguageToggle();
   });
+
+function debounce(fn, delay) {
+  let timer;
+  return function () {
+    clearTimeout(timer);
+    timer = setTimeout(fn, delay);
+  };
+}
+
+function parseNumberAttr(value) {
+  if (value === null || value === undefined) {
+    return NaN;
+  }
+  return Number.parseFloat(String(value).trim());
+}
+
+const GRAIN_FIELD_SIZE = 750;
+
+function clearGrainInstances() {
+  const stage = document.querySelector(".manual-grain-stage");
+  if (stage) {
+    stage.remove();
+  }
+}
+
+function createGrainInstance(stage, left, top, size) {
+  const docWidth = Math.max(document.documentElement.scrollWidth, document.body.scrollWidth);
+  const docHeight = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
+  const maxLeft = Math.max(0, docWidth - size);
+  const maxTop = Math.max(0, docHeight - size);
+  const clampedLeft = Math.max(0, Math.min(left, maxLeft));
+  const clampedTop = Math.max(0, Math.min(top, maxTop));
+
+  const layer = document.createElement("span");
+  layer.className = "grain-instance manual-grain-instance";
+  layer.style.left = Math.round(clampedLeft) + "px";
+  layer.style.top = Math.round(clampedTop) + "px";
+  layer.style.width = size + "px";
+  layer.style.height = size + "px";
+  stage.appendChild(layer);
+}
+
+function initGrainCommands() {
+  clearGrainInstances();
+
+  const commands = document.querySelectorAll("[data-grain-command]");
+  if (!commands.length) {
+    return;
+  }
+
+  const stage = document.createElement("div");
+  stage.className = "manual-grain-stage";
+
+  commands.forEach((node) => {
+    if (node.closest("[hidden]")) {
+      return;
+    }
+
+    const command = (node.getAttribute("data-grain-command") || "").trim().toLowerCase();
+    if (command !== "highlight") {
+      return;
+    }
+
+    const rect = node.getBoundingClientRect();
+    const size = parseNumberAttr(node.getAttribute("data-grain-size"));
+    const fieldSize = Number.isNaN(size) ? GRAIN_FIELD_SIZE : Math.max(1, size);
+    const left = window.scrollX + rect.left - fieldSize / 2;
+    const top = window.scrollY + rect.top - fieldSize / 2;
+
+    createGrainInstance(stage, left, top, fieldSize);
+  });
+
+  document.body.appendChild(stage);
+}
 
 function initThemeToggle() {
   const themeToggle = document.getElementById("theme-toggle");
@@ -156,6 +234,7 @@ function initLanguageToggle() {
     languageToggle.textContent = language === "de" ? "EN" : "DE";
     languageToggle.setAttribute("aria-label", language === "de" ? "Switch to English" : "Auf Deutsch wechseln");
     languageToggle.setAttribute("title", language === "de" ? "Switch to English" : "Auf Deutsch wechseln");
+    initGrainCommands();
   }
 
   applyLanguage(activeLanguage);

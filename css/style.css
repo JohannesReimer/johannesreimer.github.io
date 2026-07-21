@@ -107,6 +107,30 @@ body::before {
   z-index: 0;
 }
 
+.h1-grain-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.manual-grain-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.grain-instance {
+  position: absolute;
+  background-image: url("../assets/images/texture_grain.png");
+  background-repeat: no-repeat;
+  background-size: 750px 750px;
+  background-position: 0 0;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
 a {
   color: var(--link-color);
   text-decoration: none;
