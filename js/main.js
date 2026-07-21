@@ -25,7 +25,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 150));
     initThemeToggle();
     initLanguageToggle();
+    initMobileNavViewportAnchor();
   });
+
+function initMobileNavViewportAnchor() {
+  const nav = document.querySelector("nav.nav");
+  if (!nav || !window.visualViewport) {
+    return;
+  }
+
+  const mobileQuery = window.matchMedia("(max-width: 650px)");
+
+  function updateNavTop() {
+    if (!mobileQuery.matches) {
+      nav.style.top = "0px";
+      return;
+    }
+
+    // Keep the fixed nav pinned to the visible viewport top while browser UI expands/collapses.
+    nav.style.top = Math.max(0, Math.round(window.visualViewport.offsetTop || 0)) + "px";
+  }
+
+  updateNavTop();
+  window.visualViewport.addEventListener("resize", updateNavTop);
+  window.visualViewport.addEventListener("scroll", updateNavTop);
+  window.addEventListener("resize", updateNavTop);
+
+  if (mobileQuery.addEventListener) {
+    mobileQuery.addEventListener("change", updateNavTop);
+  } else if (mobileQuery.addListener) {
+    mobileQuery.addListener(updateNavTop);
+  }
+}
 
 function debounce(fn, delay) {
   let timer;
