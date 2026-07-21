@@ -16,6 +16,8 @@
 #   url: "https://example.org/publication"
 #   doi: "10.1629/1147"
 #   isbn: "9783598215957"
+#   researchgate: "377190300"
+#   pdf: "assets/pdf/file_path_to.pdf"
 #   description:
 #     de: "Optionaler Kurztext"
 #     en: "Optional short description"
@@ -35,6 +37,7 @@
 #     - "S. Marx"
 #   venue: "Beton- und Stahlbetonbau"
 #   doi: "10.1002/best.70189"
+#   researchgate: "RESEARCHGATE"
 
 # AiC 2026 ✅
 - type: paper
@@ -49,7 +52,7 @@
     - "C. Kang"
   venue: "Automation in Construction"
   doi: " 10.1016/j.autcon.2026.107126"
-  url: "https://www.researchgate.net/publication/408580588"
+  researchgate: "408580588"
 
 # fib 2026 Johannes ⌛
 - type: conference
@@ -106,7 +109,7 @@
     - "S. Marx"
   venue: "fib Symposium 2025, Antibes"
   isbn: "9782940643295"
-  url: "https://www.researchgate.net/publication/394481224"
+  researchgate: "394481224"
 
 # GBTG 2025 ⌛
 - type: conference
@@ -117,5 +120,20 @@
     - "J. Reimer"
     - "S. Marx"
   venue: "Pflegen. Aktivieren. Retten – 7. Jahrestagung der Gesellschaft für Bautechnikgeschichte, Braunschweig"
-  url: "https://www.researchgate.net/publication/394481004"
+  researchgate: "394481004"
   # isbn: "9783598215957"
+
+# BBex 2022 ✅
+- type: other
+  date: "2022"
+  title: "Brückenbauexkursion 2022 Frankreich"
+  contributors:
+    - "J. Reimer"
+    - "L. Clages"
+    - "J. Vogt"
+    - de: "TU Dresden/IMB (Hrsg.)"
+      en: "TU Dresden/IMB (ed.)"
+  url: "https://web.archive.org/web/20240714183221/https://tu-dresden.de/bu/bauingenieurwesen/imb/ressourcen/dateien/studium/bauingenieurwesen/brueckenbauexkursionen/2022/2022_Exkursionsbericht_Frankreich_web.pdf?lang=en"
+  description:
+    de: "Bericht der Brückenbauexkursion des Instituts für Massivbau der TU Dresden 2022 nach Frankreich, 108 S."
+    en: "Report of the bridge design field trip of TU Dresden Institute of Concrete Structures 2022 to France, 108 p."

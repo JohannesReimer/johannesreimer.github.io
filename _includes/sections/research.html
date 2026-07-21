@@ -18,15 +18,37 @@
 					{% assign localized_venue = publication.venue[lang] | default: publication.venue %}
 					{% assign localized_description = publication.description[lang] %}
 					{% assign localized_contributors = publication.contributors[lang] | default: publication.contributors %}
+					{% assign contributors_text = "" %}
 					{% if localized_contributors.first %}
-						{% assign contributors_text = localized_contributors | join: ", " %}
+						{% for contributor_entry in localized_contributors %}
+							{% assign contributor_label = contributor_entry %}
+							{% if contributor_entry.i18n %}
+								{% assign contributor_label = site.data.dictionary[lang][contributor_entry.i18n] | default: contributor_entry.i18n %}
+							{% elsif contributor_entry[lang] %}
+								{% assign contributor_label = contributor_entry[lang] %}
+							{% endif %}
+
+							{% if contributor_label and contributor_label != "" %}
+								{% if contributors_text != "" %}
+									{% assign contributors_text = contributors_text | append: ", " %}
+								{% endif %}
+								{% assign contributors_text = contributors_text | append: contributor_label %}
+							{% endif %}
+						{% endfor %}
 					{% else %}
-						{% assign contributors_text = localized_contributors %}
+						{% assign contributor_label = localized_contributors %}
+						{% if localized_contributors.i18n %}
+							{% assign contributor_label = site.data.dictionary[lang][localized_contributors.i18n] | default: localized_contributors.i18n %}
+						{% elsif localized_contributors[lang] %}
+							{% assign contributor_label = localized_contributors[lang] %}
+						{% endif %}
+						{% assign contributors_text = contributor_label %}
 					{% endif %}
 					{% assign highlighted_contributors = contributors_text | replace: "J. Reimer", "<span class='author-highlight'>J. Reimer</span>" %}
 					{% assign has_url = publication.url %}
 					{% assign has_doi = publication.doi %}
 					{% assign has_isbn = publication.isbn %}
+					{% assign has_researchgate = publication.researchgate %}
 					<div class="pub-entry">
 						<p>
 							{% if localized_contributors %}
@@ -36,7 +58,7 @@
 							{% endif %}
 
 							{{ localized_title }}
-							{% if has_url or has_doi or has_isbn %} • {% endif %}
+							{% if has_url or has_doi or has_isbn or has_researchgate %} • {% endif %}
 							{% if has_url %}
 								<a
 									href="{{ publication.url }}"
@@ -75,7 +97,20 @@
 								</a>
 							{% endif %}
 
-							{% unless has_url or has_doi or has_isbn %}
+							{% if has_researchgate %}
+								{% assign researchgate_value = publication.researchgate | strip %}
+								<a
+									href="https://www.researchgate.net/publication/{{ researchgate_value }}"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="ResearchGate: {{ researchgate_value }}"
+									title="ResearchGate: {{ researchgate_value }}"
+								>
+									<i class="fa-brands fa-researchgate" aria-hidden="true"></i>
+								</a>
+							{% endif %}
+
+							{% unless has_url or has_doi or has_isbn or has_researchgate %}
 								 •
 								<a
 									href="mailto:{{ site.email }}?subject={% if lang == 'de' %}PDF-Anfrage:{% else %}PDF request:{% endif %} {{ localized_title | url_encode }}"
@@ -108,15 +143,37 @@
 					{% assign localized_venue = publication.venue[lang] | default: publication.venue %}
 					{% assign localized_description = publication.description[lang] %}
 					{% assign localized_contributors = publication.contributors[lang] | default: publication.contributors %}
+					{% assign contributors_text = "" %}
 					{% if localized_contributors.first %}
-						{% assign contributors_text = localized_contributors | join: ", " %}
+						{% for contributor_entry in localized_contributors %}
+							{% assign contributor_label = contributor_entry %}
+							{% if contributor_entry.i18n %}
+								{% assign contributor_label = site.data.dictionary[lang][contributor_entry.i18n] | default: contributor_entry.i18n %}
+							{% elsif contributor_entry[lang] %}
+								{% assign contributor_label = contributor_entry[lang] %}
+							{% endif %}
+
+							{% if contributor_label and contributor_label != "" %}
+								{% if contributors_text != "" %}
+									{% assign contributors_text = contributors_text | append: ", " %}
+								{% endif %}
+								{% assign contributors_text = contributors_text | append: contributor_label %}
+							{% endif %}
+						{% endfor %}
 					{% else %}
-						{% assign contributors_text = localized_contributors %}
+						{% assign contributor_label = localized_contributors %}
+						{% if localized_contributors.i18n %}
+							{% assign contributor_label = site.data.dictionary[lang][localized_contributors.i18n] | default: localized_contributors.i18n %}
+						{% elsif localized_contributors[lang] %}
+							{% assign contributor_label = localized_contributors[lang] %}
+						{% endif %}
+						{% assign contributors_text = contributor_label %}
 					{% endif %}
 					{% assign highlighted_contributors = contributors_text | replace: "J. Reimer", "<span class='author-highlight'>J. Reimer</span>" %}
 					{% assign has_url = publication.url %}
 					{% assign has_doi = publication.doi %}
 					{% assign has_isbn = publication.isbn %}
+					{% assign has_researchgate = publication.researchgate %}
 					<div class="pub-entry">
 						<p>
 							{% if localized_contributors %}
@@ -126,7 +183,7 @@
 							{% endif %}
 
 							{{ localized_title }}
-							{% if has_url or has_doi or has_isbn %} • {% endif %}
+							{% if has_url or has_doi or has_isbn or has_researchgate %} • {% endif %}
 							{% if has_url %}
 								<a
 									href="{{ publication.url }}"
@@ -165,7 +222,20 @@
 								</a>
 							{% endif %}
 
-							{% unless has_url or has_doi or has_isbn %}
+							{% if has_researchgate %}
+								{% assign researchgate_value = publication.researchgate | strip %}
+								<a
+									href="https://www.researchgate.net/publication/{{ researchgate_value }}"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="ResearchGate: {{ researchgate_value }}"
+									title="ResearchGate: {{ researchgate_value }}"
+								>
+									<i class="fa-brands fa-researchgate" aria-hidden="true"></i>
+								</a>
+							{% endif %}
+
+							{% unless has_url or has_doi or has_isbn or has_researchgate %}
 								 •
 								<a
 									href="mailto:{{ site.email }}?subject={% if lang == 'de' %}PDF-Anfrage:{% else %}PDF request:{% endif %} {{ localized_title | url_encode }}"
@@ -198,15 +268,37 @@
 					{% assign localized_venue = publication.venue[lang] | default: publication.venue %}
 					{% assign localized_description = publication.description[lang] %}
 					{% assign localized_contributors = publication.contributors[lang] | default: publication.contributors %}
+					{% assign contributors_text = "" %}
 					{% if localized_contributors.first %}
-						{% assign contributors_text = localized_contributors | join: ", " %}
+						{% for contributor_entry in localized_contributors %}
+							{% assign contributor_label = contributor_entry %}
+							{% if contributor_entry.i18n %}
+								{% assign contributor_label = site.data.dictionary[lang][contributor_entry.i18n] | default: contributor_entry.i18n %}
+							{% elsif contributor_entry[lang] %}
+								{% assign contributor_label = contributor_entry[lang] %}
+							{% endif %}
+
+							{% if contributor_label and contributor_label != "" %}
+								{% if contributors_text != "" %}
+									{% assign contributors_text = contributors_text | append: ", " %}
+								{% endif %}
+								{% assign contributors_text = contributors_text | append: contributor_label %}
+							{% endif %}
+						{% endfor %}
 					{% else %}
-						{% assign contributors_text = localized_contributors %}
+						{% assign contributor_label = localized_contributors %}
+						{% if localized_contributors.i18n %}
+							{% assign contributor_label = site.data.dictionary[lang][localized_contributors.i18n] | default: localized_contributors.i18n %}
+						{% elsif localized_contributors[lang] %}
+							{% assign contributor_label = localized_contributors[lang] %}
+						{% endif %}
+						{% assign contributors_text = contributor_label %}
 					{% endif %}
 					{% assign highlighted_contributors = contributors_text | replace: "J. Reimer", "<span class='author-highlight'>J. Reimer</span>" %}
 					{% assign has_url = publication.url %}
 					{% assign has_doi = publication.doi %}
 					{% assign has_isbn = publication.isbn %}
+					{% assign has_researchgate = publication.researchgate %}
 					<div class="pub-entry">
 						<p>
 							{% if localized_contributors %}
@@ -216,7 +308,7 @@
 							{% endif %}
 
 							{{ localized_title }}
-							{% if has_url or has_doi or has_isbn %} • {% endif %}
+							{% if has_url or has_doi or has_isbn or has_researchgate %} • {% endif %}
 							{% if has_url %}
 								<a
 									href="{{ publication.url }}"
@@ -255,7 +347,20 @@
 								</a>
 							{% endif %}
 
-							{% unless has_url or has_doi or has_isbn %}
+							{% if has_researchgate %}
+								{% assign researchgate_value = publication.researchgate | strip %}
+								<a
+									href="https://www.researchgate.net/publication/{{ researchgate_value }}"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="ResearchGate: {{ researchgate_value }}"
+									title="ResearchGate: {{ researchgate_value }}"
+								>
+									<i class="fa-brands fa-researchgate" aria-hidden="true"></i>
+								</a>
+							{% endif %}
+
+							{% unless has_url or has_doi or has_isbn or has_researchgate %}
 								 •
 								<a
 									href="mailto:{{ site.email }}?subject={% if lang == 'de' %}PDF-Anfrage:{% else %}PDF request:{% endif %} {{ localized_title | url_encode }}"
