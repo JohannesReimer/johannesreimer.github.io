@@ -94,10 +94,10 @@ de:
   drIng: "Dr.-Ing."
   drIngTopic: "Ontologiebasierte Analyse historischer Entwicklungen im Spannbetonbau"
   #
-  tldrEducation: "Ich promoviere aktuell über die ontologiebasierte Analyse historischer Entwicklungen im Spannbetonbau."
-  tldrExperience: "Als Bauingenieur habe ich Erfahrung im Brückenbau, insbesondere in der Bestandsplanung, aber auch im Neubau. In der Forschung und Lehre war ich schon im Studium tätig."
-  tldrAwards: "Für die von mir konzipierten Tutorien gewann ich mehrere Lehrpreise."
-  tldrSkills: "Ich spreche fließend englisch und deutsch sowie etwas spanisch. Ich arbeite gerne interdisziplinär und liebe es, meine Ergebnisse verständlich zu visualisieren."
+  tldrEducation: "Ich <span class='highlight'>promoviere</span> aktuell über die ontologiebasierte Analyse historischer Entwicklungen im Spannbetonbau."
+  tldrExperience: "Als Bauingenieur habe ich <span class='highlight'>Erfahrung im Brückenbau</span>, insbesondere in der Bestandsplanung, aber auch im Neubau. In der <span class='highlight'>Forschung und Lehre</span> war ich schon im Studium tätig."
+  tldrAwards: "Für die von mir konzipierten Tutorien gewann ich <span class='highlight'>mehrere Lehrpreise</span>."
+  tldrSkills: "Ich spreche fließend <span class='highlight'>englisch und deutsch</span> sowie etwas spanisch. Ich arbeite gerne <span class='highlight'>interdisziplinär</span> und liebe es, meine Ergebnisse verständlich zu <span class='highlight'>visualisieren</span>."
 
 en:
   home: "Home"
@@ -196,7 +196,7 @@ en:
   drIng: "PhD"
   drIngTopic: "Ontology-based analysis of historical developments in prestressed concrete construction"
   #
-  tldrEducation: "Currently, I am pursuing my PhD on the ontology-based analysis of historical developments in prestressed concrete construction."
-  tldrExperience: "As a structural engineer, I am experienced in bridge construction, particularly in the maintenance of existing structures. I was already involved in research and teaching during my degree studies."
-  tldrAwards: "I have won several teaching awards for the undergraduate tutorials I designed."
-  tldrSkills: "I am fluent in English and German, and also speak a little Spanish. I enjoy working across disciplines and love to visualise my findings in easy-to-understand ways."
+  tldrEducation: "Currently, I am <span class='highlight'>pursuing my PhD</span> on the ontology-based analysis of historical developments in prestressed concrete construction."
+  tldrExperience: "As a structural engineer, I am <span class='highlight'>experienced in bridge construction</span>, particularly in the maintenance of existing structures. I was already involved in <span class='highlight'>research and teaching</span> during my degree studies."
+  tldrAwards: "I have won <span class='highlight'>several teaching awards</span> for the undergraduate tutorials I designed."
+  tldrSkills: "I am fluent in <span class='highlight'>English and German</span>, and also speak a little Spanish. I enjoy <span class='highlight'>interdisciplinary</span> collaboration and love to <span class='highlight'>visualise</span> my findings in easy-to-understand ways."

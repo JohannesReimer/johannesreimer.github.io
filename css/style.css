@@ -322,9 +322,9 @@ h1 + h2 {
   margin-top: 0.5rem;
 }
 
-.author-highlight {
+.highlight {
   display: inline;
-  font-weight: 700;
+  font-weight: 600;
   background-color: rgba(175, 198, 118, 0.22);
   padding: 0 0.12em;
   border-radius: 0.14em;
