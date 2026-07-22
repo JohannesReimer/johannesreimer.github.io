@@ -64,7 +64,7 @@
     - "J. Vogt"
     - "C. Kang"
     - "S. Marx"
-  venue: "7th fib Congress 2026, Lisbon"
+  venue: "7th fib Congress 2026, 15.–19.06.2026, Lisbon"
   # isbn: "9783598215957"
   # description:
   #   de: "S. XXX-XXX"
@@ -80,11 +80,25 @@
     - "M. Müller"
     - "C. Kang"
     - "S. Marx"
-  venue: "7th fib Congress 2026, Lisbon"
+  venue: "7th fib Congress 2026, 15.–19.06.2026, Lisbon"
   # isbn: "9783598215957"
   # description:
   #   de: "S. XXX-XXX"
   #   en: "pp. XXX-XXX"
+#
+# BCore Ontology ✅
+- type: other
+  date: "2025-11-06"
+  title: "Bridge Core Ontology for Institute of Concrete Structures, Dresden University of Technology"
+  contributors:
+    - "T. Noack,"
+    - "X. Song"
+    - "J. Reimer"
+    - "M. Florek"
+  url: "https://w3id.org/bcore/"
+  description:
+    de: "Die Bridge Core Ontology (BCore) ist ein Ontologie-System, das dazu geeignet ist, eine Brückenstruktur, sowie die mit ihr verbundenen Bauteile, Baustoffe, Infrastruktur, Mediendateien, und Umgebung darzustellen."
+    en: "The Bridge Core Ontology (BCore) is an ontology ecosystem that enables the represetation of a bridge structure, as well as the components, material, infrastructure, media files, and environment connected to it."
 
 # PD 2025 ✅
 - type: other
@@ -108,7 +122,7 @@
     - "J. Vogt"
     - "J. Reimer"
     - "S. Marx"
-  venue: "fib Symposium 2025, Antibes"
+  venue: "21st fib Symposium, 16.–18.06.2025, Antibes, FR"
   isbn: "9782940643295"
   researchgate: "394481224"
 
@@ -120,7 +134,7 @@
     - "J. Vogt"
     - "J. Reimer"
     - "S. Marx"
-  venue: "Pflegen. Aktivieren. Retten – 7. Jahrestagung der Gesellschaft für Bautechnikgeschichte, Braunschweig"
+  venue: "Pflegen. Aktivieren. Retten – 7. Jahrestagung der Gesellschaft für Bautechnikgeschichte, 15.–17.05.2025, Braunschweig, DE"
   researchgate: "394481004"
   # isbn: "9783598215957"
 
