@@ -112,6 +112,8 @@ body::before {
   inset: 0;
   z-index: 0;
   pointer-events: none;
+  overflow: hidden;
+  overflow-x: clip;
 }
 
 .manual-grain-stage {
@@ -119,6 +121,8 @@ body::before {
   inset: 0;
   z-index: 0;
   pointer-events: none;
+  overflow: hidden;
+  overflow-x: clip;
 }
 
 .grain-instance {
