@@ -23,22 +23,22 @@
 #     de: "Optionaler Kurztext"
 #     en: "Optional short description"
 
-# # BuSt 2026 ✅
-# - type: paper
-#   date: "2026-09"
-#   title: "Die ersten Spannbetonbrücken im Freivorbau – Historische Entwicklung und moderner Erhalt"
-#   contributors:
-#     - "J. Reimer"
-#     - "M. Waßmann"
-#     - "C. Eisermann"
-#     - "J. Vogt"
-#     - "C. Voigt"
-#     - "G. Schacht"
-#     - "C. Kang"
-#     - "S. Marx"
-#   venue: "Beton- und Stahlbetonbau"
-#   doi: "10.1002/best.70189"
-#   researchgate: "RESEARCHGATE"
+# BuSt 2026 ✅
+- type: paper
+  date: "2026-09"
+  title: "Die ersten Spannbetonbrücken im Freivorbau – Historische Entwicklung und moderner Erhalt"
+  contributors:
+    - "J. Reimer"
+    - "M. Waßmann"
+    - "C. Eisermann"
+    - "J. Vogt"
+    - "C. Voigt"
+    - "G. Schacht"
+    - "C. Kang"
+    - "S. Marx"
+  venue: "Beton- und Stahlbetonbau"
+  doi: "10.1002/best.70189"
+  researchgate: "410672708"
 
 # AiC 2026 ✅
 - type: paper
