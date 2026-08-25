@@ -1,0 +1,188 @@
+- title:
+    de: "Beispielbild 01, hochkant"
+    en: "Example picture 01, portrait"
+  src: "/assets/images/gallery/example_portrait.jpg"
+  alt:
+    de: "Beispielbild 01, hochkant"
+    en: "Example picture 01, portrait"
+  type: "portrait"
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+
+- title:
+    de: "Beispielbild 02, Landschaft"
+    en: "Example picture 02, landscape"
+  src: "/assets/images/gallery/example_landscape.jpg"
+  alt:
+    de: "Beispielbild 02, Landschaft"
+    en: "Example picture 02, landscape"
+  type: "landscape"
+  featured: true
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+
+- title:
+    de: "Beispielbild 03, hochkant"
+    en: "Example picture 03, portrait"
+  src: "/assets/images/gallery/example_portrait.jpg"
+  alt:
+    de: "Beispielbild 03, hochkant"
+    en: "Example picture 03, portrait"
+  type: "portrait"
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+
+- title:
+    de: "Beispielbild 04, Landschaft"
+    en: "Example picture 04, landscape"
+  src: "/assets/images/gallery/example_landscape.jpg"
+  alt:
+    de: "Beispielbild 04, Landschaft"
+    en: "Example picture 04, landscape"
+  type: "landscape"
+  # featured: true
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+
+- title:
+    de: "Beispielbild 05, hochkant"
+    en: "Example picture 05, portrait"
+  src: "/assets/images/gallery/example_portrait.jpg"
+  alt:
+    de: "Beispielbild 05, hochkant"
+    en: "Example picture 05, portrait"
+  type: "portrait"
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+
+- title:
+    de: "Beispielbild 06, Landschaft"
+    en: "Example picture 06, landscape"
+  src: "/assets/images/gallery/example_landscape.jpg"
+  alt:
+    de: "Beispielbild 06, Landschaft"
+    en: "Example picture 06, landscape"
+  type: "landscape"
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+
+- title:
+    de: "Beispielbild 07, hochkant"
+    en: "Example picture 07, portrait"
+  src: "/assets/images/gallery/example_portrait.jpg"
+  alt:
+    de: "Beispielbild 07, hochkant"
+    en: "Example picture 07, portrait"
+  type: "portrait"
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+
+- title:
+    de: "Beispielbild 08, Landschaft"
+    en: "Example picture 08, landscape"
+  src: "/assets/images/gallery/example_landscape.jpg"
+  alt:
+    de: "Beispielbild 08, Landschaft"
+    en: "Example picture 08, landscape"
+  type: "landscape"
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+
+- title:
+    de: "Beispielbild 14, Landschaft"
+    en: "Example picture 14, landscape"
+  src: "/assets/images/gallery/example_landscape.jpg"
+  alt:
+    de: "Beispielbild 14, Landschaft"
+    en: "Example picture 14, landscape"
+  type: "landscape"
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+
+- title:
+    de: "Beispielbild 14, Landschaft"
+    en: "Example picture 14, landscape"
+  src: "/assets/images/gallery/example_landscape.jpg"
+  alt:
+    de: "Beispielbild 14, Landschaft"
+    en: "Example picture 14, landscape"
+  type: "landscape"
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+
+- title:
+    de: "Beispielbild 09, hochkant"
+    en: "Example picture 09, portrait"
+  src: "/assets/images/gallery/example_portrait.jpg"
+  alt:
+    de: "Beispielbild 09, hochkant"
+    en: "Example picture 09, portrait"
+  type: "portrait"
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+
+- title:
+    de: "Beispielbild 10, Landschaft"
+    en: "Example picture 10, landscape"
+  src: "/assets/images/gallery/example_landscape.jpg"
+  alt:
+    de: "Beispielbild 10, Landschaft"
+    en: "Example picture 10, landscape"
+  type: "landscape"
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+
+- title:
+    de: "Beispielbild 11, hochkant"
+    en: "Example picture 11, portrait"
+  src: "/assets/images/gallery/example_portrait.jpg"
+  alt:
+    de: "Beispielbild 11, hochkant"
+    en: "Example picture 11, portrait"
+  type: "portrait"
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+
+- title:
+    de: "Beispielbild 12, Landschaft"
+    en: "Example picture 12, landscape"
+  src: "/assets/images/gallery/example_landscape.jpg"
+  alt:
+    de: "Beispielbild 12, Landschaft"
+    en: "Example picture 12, landscape"
+  type: "landscape"
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+
+- title:
+    de: "Beispielbild 13, hochkant"
+    en: "Example picture 13, portrait"
+  src: "/assets/images/gallery/example_portrait.jpg"
+  alt:
+    de: "Beispielbild 13, hochkant"
+    en: "Example picture 13, portrait"
+  type: "portrait"
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+
+- title:
+    de: "Beispielbild 13, hochkant"
+    en: "Example picture 13, portrait"
+  src: "/assets/images/gallery/example_portrait.jpg"
+  alt:
+    de: "Beispielbild 13, hochkant"
+    en: "Example picture 13, portrait"
+  type: "portrait"
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+
+- title:
+    de: "Beispielbild 14, Landschaft"
+    en: "Example picture 14, landscape"
+  src: "/assets/images/gallery/example_landscape.jpg"
+  alt:
+    de: "Beispielbild 14, Landschaft"
+    en: "Example picture 14, landscape"
+  type: "landscape"
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"

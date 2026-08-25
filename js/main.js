@@ -222,12 +222,25 @@ function initLanguageToggle() {
     });
   }
 
+  function applyGalleryCaptions(language) {
+    document.querySelectorAll("[data-gallery-caption]").forEach(function (element) {
+      const caption = language === "en"
+        ? element.getAttribute("data-gallery-caption-en")
+        : element.getAttribute("data-gallery-caption-de");
+
+      if (caption) {
+        element.textContent = caption;
+      }
+    });
+  }
+
   function applyLanguage(language) {
     const translations = dictionary[language] || {};
 
     applyTextTranslations(translations);
     applyAttributeTranslations(translations);
     applyLanguageSections(language);
+    applyGalleryCaptions(language);
 
     document.documentElement.setAttribute("lang", language);
     localStorage.setItem(storageKey, language);
