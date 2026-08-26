@@ -46,6 +46,9 @@
   {% for callout in home_callouts %}
   <div class="callout-box{% if forloop.index0 == closest_index %} active{% endif %}">
     <div class="callout-text">
+      {% if callout.image %}
+      <div class="callout-image-spacer"></div>
+      {% endif %}
       <h2 data-i18n-lang="de">{{ callout.title.de }}</h2>
       <h2 data-i18n-lang="en" hidden>{{ callout.title.en }}</h2>
       <p data-i18n-lang="de">{{ callout.description.de }}</p>
@@ -80,6 +83,21 @@
     var currentIndex = boxes.findIndex(function (b) { return b.classList.contains('active'); });
     if (currentIndex < 0) currentIndex = 0;
 
+    function updateSpacerSize() {
+      boxes.forEach(function (box) {
+        var img = box.querySelector('.callout-image img');
+        var spacer = box.querySelector('.callout-image-spacer');
+        if (img && spacer) {
+          var width = img.offsetWidth;
+          var height = img.offsetHeight;
+          if (width > 0 && height > 0) {
+            spacer.style.width = (width - 8) + 'px';
+            spacer.style.height = (height - 80) + 'px';
+          }
+        }
+      });
+    }
+
     function advance() {
       var current = boxes[currentIndex];
       currentIndex = (currentIndex + 1) % boxes.length;
@@ -100,8 +118,20 @@
 
       setTimeout(function () {
         current.classList.remove('exiting');
+        updateSpacerSize();
       }, 600);
     }
+
+    // Update spacer sizes on initial load and when images load
+    updateSpacerSize();
+    var allImgs = carousel.querySelectorAll('.callout-image img');
+    allImgs.forEach(function (img) {
+      if (img.complete) {
+        updateSpacerSize();
+      } else {
+        img.addEventListener('load', updateSpacerSize);
+      }
+    });
 
     setInterval(advance, 5000);
 
