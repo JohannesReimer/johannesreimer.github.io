@@ -288,9 +288,9 @@ redirect_from:
       if (galleryGrid && window.Masonry) {
         masonryInstance = new window.Masonry(galleryGrid, {
           itemSelector: '.gallery-item',
-          columnWidth: galleryGrid.offsetWidth / 5 - 16*4/5,
+          columnWidth: galleryGrid.offsetWidth / 5 - 24*4/5,
           percentPosition: true,
-          gutter: 16,
+          gutter: 24,
           transitionDuration: '0.3s'
         });
         
@@ -337,9 +337,9 @@ redirect_from:
       if (shouldUseMasonry() && galleryGrid && window.Masonry) {
         masonryInstance = new window.Masonry(galleryGrid, {
           itemSelector: '.gallery-item',
-          columnWidth: galleryGrid.offsetWidth / 5 - 16*4/5,
+          columnWidth: galleryGrid.offsetWidth / 5 - 24*4/5,
           percentPosition: true,
-          gutter: 16,
+          gutter: 24,
           transitionDuration: '0.3s'
         });
         masonryInstance.reloadItems();

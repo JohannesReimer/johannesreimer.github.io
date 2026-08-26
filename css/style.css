@@ -34,6 +34,7 @@ html {
   --gallery-modal-surface: rgba(20, 26, 29, 0.7);
   --gray: #7f7f7f;
   --text-blue: #00305e;
+  --primary-blue-35: rgba(0, 75, 127, 0.35);
   --accent-teal-35: rgba(89, 122, 120, 0.35);
   --accent-teal-65: rgba(89, 122, 120, 0.65);
   --primary-blue-35: rgba(0, 75, 127, 0.35);
@@ -714,7 +715,7 @@ main :where(ul, ol):not(.todo-list) > li {
 .gallery-item {
   position: absolute;
   display: block;
-  width: calc(20% - 16px * 4 / 5);
+  width: calc(20% - 24px * 4 / 5);
   padding: 0;
   border: none;
   background: transparent;
@@ -725,12 +726,15 @@ main :where(ul, ol):not(.todo-list) > li {
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
   transition: box-shadow 0.2s ease;
   margin: 0;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   font-size: 1rem;
 }
 
 .gallery-item.featured {
-  width: calc(40% - 16px * 4 / 5 * 2 + 16px);
+  width: calc(40% - 24px * 4 / 5 * 2 + 24px + 0.7rem);
+  transform: rotate(-2deg) translate(-0.35rem, -0.35rem) !important;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+  margin-bottom: 16px;
 }
 
 .gallery-item::before {
