@@ -7,6 +7,10 @@
   padding: 0;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 html {
   font-size: 16px;
   scroll-behavior: smooth;
@@ -63,7 +67,6 @@ html {
   --social-link-foreground: var(--light-green);
   --social-link-background: var(--accent-teal);
   --social-link-hover-background: var(--accent-teal-65);
-  --callout-color: var(--primary-blue);
 }
 
 :root[data-theme="dark"] {
@@ -85,7 +88,6 @@ html {
   --social-link-foreground: var(--light-green);
   --social-link-background: var(--accent-teal);
   --social-link-hover-background: var(--accent-teal-65);
-  --callout-color: var(--accent-green);
 }
 
 body {
@@ -198,7 +200,6 @@ nav ul {
 
 nav ul li a {
   display: block;
-  padding: 1rem 1.2rem;
   color: var(--nav-link-color);
   font-family: var(--font-heading);
   font-size: 1rem;
@@ -267,7 +268,7 @@ nav ul li a.active {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2.5rem;
   list-style: none;
   min-height: var(--nav-height);
   width: 100%;
@@ -426,6 +427,7 @@ main :where(ul, ol):not(.todo-list) > li {
   font-family: var(--font-base);
   text-align: center;
   margin-top: 2.5rem;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
 }
 
 .profile-photo img {
@@ -554,6 +556,138 @@ main :where(ul, ol):not(.todo-list) > li {
   color: var(--accent-teal-35);
   font-family: var(--font-heading);
   font-size: 6rem;
+}
+
+/* =============================================
+   Callout box
+   ============================================= */
+.callout-carousel {
+  display: grid;
+  margin-top: 3.6rem;
+  width: calc(100% - 1rem);
+}
+
+@media (min-width: 1101px) {
+  .callout-carousel {
+    width: calc(100% + 200px - 1rem);
+    margin-left: -100px;
+  }
+}
+
+.callout-box {
+  grid-area: 1 / 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  background: var(--social-link-background);
+  border-radius: 12px;
+  color: var(--light-green);
+  position: relative;
+  overflow: visible;
+  opacity: 0;
+  transform: translateX(50px) scale(0.97);
+  pointer-events: none;
+}
+
+.callout-carousel--ready .callout-box {
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.callout-box.active {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.callout-box.exiting {
+  opacity: 0;
+  transform: translateX(-50px) scale(0.97);
+}
+
+.callout-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.callout-text h2 {
+  font-family: var(--font-h1);
+  font-size: 1.5rem;
+  margin-top: 0;
+  color: inherit;
+  position: relative;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+.callout-text h2::after {
+  content: "";
+  position: absolute;
+  left: -3px;
+  right: -3px;
+  bottom: 1px;
+  height: 6px;
+  background-color: var(--primary-blue-35);
+}
+
+.callout-text p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: inherit;
+  opacity: 0.9;
+}
+
+.callout-cta {
+  display: inline-block;
+  padding: 0.45rem 1.1rem;
+  background: var(--text-blue);
+  border-radius: 8px;
+  color: inherit;
+  font-family: var(--font-hyperlink);
+  font-size: 0.85rem;
+  text-decoration: none;
+  width: fit-content;
+  transition: background 0.2s ease;
+}
+
+.callout-cta:hover,
+.callout-cta:focus-visible {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.callout-image {
+  position: absolute;
+  top: -2.0rem;
+  right: -0.5rem;
+  line-height: 0;
+}
+
+.callout-image img {
+  display: block;
+  max-width: 300px;
+  max-height: 240px;
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  transform: rotate(-3deg);
+  transform-origin: top right;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+}
+
+@media (max-width: 650px) {
+  .callout-carousel {
+    width: calc(100% - 1rem);
+    margin-left: 0;
+  }
+
+  .callout-image img {
+    max-width: 180px;
+    max-height: 180px;
+    margin: 0;
+  }
 }
 
 /* =============================================
@@ -919,7 +1053,7 @@ footer {
     width: 100%;
     max-width: 100%;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1.5rem;
     margin: 0;
     background: var(--nav-background);
     padding: 1rem;

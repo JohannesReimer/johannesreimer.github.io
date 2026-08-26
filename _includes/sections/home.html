@@ -25,3 +25,99 @@
   <a href="https://www.instagram.com/johannes_foto" class="social-link" target="_blank" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
   <a href="https://de.wikipedia.org/wiki/Benutzer:Johannes_Reimer" class="social-link" target="_blank" aria-label="Wikipedia" title="Wikipedia"><i class="fa-brands fa-wikipedia-w" aria-hidden="true"></i></a>
 </div>
+
+{% assign home_callouts = site.data.callouts | where: "page", "home" %}
+{% assign today_ymd = site.time | date: "%Y%m%d" | plus: 0 %}
+{% assign closest_index = 0 %}
+{% assign closest_diff = 99999999 %}
+{% for callout in home_callouts %}
+  {% assign date_str = callout["date-added"] %}
+  {% assign callout_ymd = date_str | date: "%Y%m%d" | plus: 0 %}
+  {% assign diff = today_ymd | minus: callout_ymd %}
+  {% if diff < 0 %}{% assign diff = diff | times: -1 %}{% endif %}
+  {% if diff < closest_diff %}
+    {% assign closest_diff = diff %}
+    {% assign closest_index = forloop.index0 %}
+  {% endif %}
+{% endfor %}
+
+{% if home_callouts.size > 0 %}
+<div class="callout-carousel">
+  {% for callout in home_callouts %}
+  <div class="callout-box{% if forloop.index0 == closest_index %} active{% endif %}">
+    <div class="callout-text">
+      <h2 data-i18n-lang="de">{{ callout.title.de }}</h2>
+      <h2 data-i18n-lang="en" hidden>{{ callout.title.en }}</h2>
+      <p data-i18n-lang="de">{{ callout.description.de }}</p>
+      <p data-i18n-lang="en" hidden>{{ callout.description.en }}</p>
+      <a href="{{ callout["call-to-action-url"] | relative_url }}" class="callout-cta">
+        <span data-i18n-lang="de">{{ callout["call-to-action-text"].de }}</span>
+        <span data-i18n-lang="en" hidden>{{ callout["call-to-action-text"].en }}</span>
+      </a>
+    </div>
+    {% if callout.image %}
+    <div class="callout-image">
+      <img src="{{ callout.image | relative_url }}" alt="" />
+    </div>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+
+<script>
+  (function () {
+    var carousel = document.querySelector('.callout-carousel');
+    if (!carousel) return;
+    var boxes = Array.from(carousel.querySelectorAll('.callout-box'));
+
+    // Enable transitions after initial paint so active box appears instantly
+    requestAnimationFrame(function () {
+      carousel.classList.add('callout-carousel--ready');
+    });
+
+    if (boxes.length <= 1) return;
+
+    var currentIndex = boxes.findIndex(function (b) { return b.classList.contains('active'); });
+    if (currentIndex < 0) currentIndex = 0;
+
+    function advance() {
+      var current = boxes[currentIndex];
+      currentIndex = (currentIndex + 1) % boxes.length;
+      var next = boxes[currentIndex];
+
+      // Snap next to enter-from-right without transition
+      next.style.transition = 'none';
+      next.classList.remove('active', 'exiting');
+      void next.offsetWidth; // force reflow
+
+      // Exit current
+      current.classList.add('exiting');
+      current.classList.remove('active');
+
+      // Re-enable transition and animate next in
+      next.style.transition = '';
+      next.classList.add('active');
+
+      setTimeout(function () {
+        current.classList.remove('exiting');
+      }, 600);
+    }
+
+    setInterval(advance, 5000);
+
+    // Scroll parallax: rotate callout images from -3° to +3° over one viewport height
+    var calloutImgs = Array.from(carousel.querySelectorAll('.callout-image img'));
+    function updateParallax() {
+      if (!calloutImgs.length) return;
+      var progress = (window.scrollY || window.pageYOffset) / window.innerHeight;
+      progress = Math.max(0, Math.min(1, progress));
+      var angle = (-3 + progress * 12).toFixed(2);
+      calloutImgs.forEach(function (img) {
+        img.style.transform = 'rotate(' + angle + 'deg)';
+      });
+    }
+    window.addEventListener('scroll', updateParallax, { passive: true });
+    updateParallax();
+  })();
+</script>
+{% endif %}
