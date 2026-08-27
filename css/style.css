@@ -22,6 +22,7 @@ html {
   --font-heading: "Cousine", monospace;
   --font-hyperlink: "Cousine", monospace;
 
+  --h1-color: #00305e;
   --primary-blue: #004b7f;
   --accent-green: #afc676;
   --accent-lime: #f9f871;
@@ -78,6 +79,7 @@ html {
     #11171c;
   --text-color: #dce7e8;
   --link-color: #b3cccc;
+  --h1-color: #afc676;
   --link-hover-color: rgb(113, 138, 135);
   --nav-link-color: #c9deb7;
   --nav-link-hover-color: #e7f2d4;
@@ -727,7 +729,6 @@ main :where(ul, ol):not(.todo-list) > li {
   text-align: left;
   cursor: pointer;
   border-radius: 12px;
-  overflow: hidden;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
   transition: box-shadow 0.2s ease;
   margin: 0;
@@ -737,9 +738,14 @@ main :where(ul, ol):not(.todo-list) > li {
 
 .gallery-item.featured {
   width: calc(40% - 24px * 4 / 5 * 2 + 24px + 0.7rem);
-  transform: rotate(-2deg) translate(-0.35rem, -0.35rem) !important;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
   margin-bottom: 16px;
+}
+
+.gallery-item.featured .gallery-item-inner {
+  display: block;
+  transform: var(--featured-rotation, rotate(-2deg));
+  box-shadow: 3px 3px 0 var(--h1-color);
+  border-radius: 12px;
 }
 
 .gallery-item::before {
@@ -789,6 +795,10 @@ main :where(ul, ol):not(.todo-list) > li {
 .gallery-item:focus-visible::after {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
+}
+
+.gallery-item-inner {
+  display: block;
 }
 
 .gallery-item img {
@@ -930,11 +940,13 @@ main :where(ul, ol):not(.todo-list) > li {
 .gallery-modal-meta {
   position: absolute;
   bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  width: 100%;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
   margin-top: 0;
   padding: 0.6rem 0.8rem;
   border-radius: 0;
@@ -956,6 +968,9 @@ main :where(ul, ol):not(.todo-list) > li {
   display: flex;
   flex-direction: column;
   gap: 0.12rem;
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .gallery-modal-label {
@@ -988,6 +1003,72 @@ main :where(ul, ol):not(.todo-list) > li {
 .gallery-modal-close:hover,
 .gallery-modal-close:focus-visible {
   background: rgba(255, 255, 255, 0.2);
+}
+
+.gallery-modal-download {
+  position: absolute;
+  top: 0.8rem;
+  right: 3rem;
+  z-index: 2001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.gallery-modal-download:hover,
+.gallery-modal-download:focus-visible {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: normal;
+}
+
+.gallery-modal-info {
+  display: none;
+  position: absolute;
+  bottom: 0.7rem;
+  right: 0.7rem;
+  z-index: 2001;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 1.05rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.touch-mode .gallery-modal-info {
+  display: flex;
+}
+
+/* In touch mode: meta only shows on explicit toggle, not on hover */
+.touch-mode .gallery-modal-meta {
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.touch-mode .gallery-modal-dialog:hover .gallery-modal-meta {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.touch-mode .gallery-modal-dialog.meta-visible .gallery-modal-meta {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 /* =============================================

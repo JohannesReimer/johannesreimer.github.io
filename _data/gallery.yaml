@@ -1,188 +1,289 @@
-- title:
-    de: "Beispielbild 01, hochkant"
-    en: "Example picture 01, portrait"
-  src: "/assets/images/gallery/example_portrait.jpg"
+# Gallery Picture Data
+
+# Paths for thumb/preview/download are automatically derived from src.
+# Fill in the title and alt texts.
+# Camera data is automatically read from EXIF if available.
+# Optional: featured: true for larger featured image
+
+- src: "/assets/images/gallery/downloads/15-06-21-18098.jpg"
+  title:
+    de: "'Klasse! Wir singen!' in Berlin"
+    en: "'Klasse! Wir singen!' in Berlin"
   alt:
-    de: "Beispielbild 01, hochkant"
-    en: "Example picture 01, portrait"
-  type: "portrait"
+    de: "Das Bild zeigt eine Vogelperspektive des Liederfestes 'Klasse! Wir singen!' in Berlin. Zu sehen ist neben zahlreichen singenden Kindern und Besuchern auch der Moderator, eine Band und ein Anzeige-Würfel mit Liedtexten. Die Halle ist mit bunt beleuchtet."
+    en: "The image shows a bird's-eye view of the 'Klasse! Wir singen!' concert in Berlin. In addition to numerous singing children and visitors, the moderator, a band, and a display cube with song lyrics can also be seen. The hall is illuminated with colorful lights."
   license: "CC BY 4.0"
   licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
 
-- title:
-    de: "Beispielbild 02, Landschaft"
-    en: "Example picture 02, landscape"
-  src: "/assets/images/gallery/example_landscape.jpg"
+- src: "/assets/images/gallery/downloads/24-03-10-56760.jpg"
+  title:
+    de: "Sprinkenhof, Hamburg"
+    en: "Sprinkenhof, Hamburg"
   alt:
-    de: "Beispielbild 02, Landschaft"
-    en: "Example picture 02, landscape"
-  type: "landscape"
+    de: "Das Bild zeigt eine aufwendig gestaltete Backsteinfassade im Sprinkenhof in Hamburg. Die Sonne scheint auf die Fassade, wirft Schatten und wird teilweise auf den glatten Steinoberflächen reflektiert."
+    en: "The image shows an elaborately designed brick facade in the Sprinkenhof in Hamburg. The sun shines on the facade, casting shadows and partially reflecting off the smooth stone surfaces."
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+
+- src: "/assets/images/gallery/downloads/24-03-10-56778.jpg"
+  title:
+    de: "Chilehaus, Hamburg"
+    en: "Chilehaus, Hamburg"
+  alt:
+    de: "Das Bild zeigt die Spitze des Daches des Chilehauses in Hamburg, fotografiert von der Burchardstraße im Gegenlicht. Die harten Schatten verstärken den Kontrast des Schwarz-Weiß-Bildes."
+    en: "The image shows a sharp tip of the roof of the Chilehaus in Hamburg, photographed from Burchardstraße against the light. The harsh shadows enhance the contrast of the black-and-white image."
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+
+- src: "/assets/images/gallery/downloads/24-03-10-56880.jpg"
+  title:
+    de: "Speicherstadt, Hamburg"
+    en: "Speicherstadt, Hamburg"
+  alt:
+    de: "Zu sehen ist ein Ausschnitt eines genieteten Obergurts einer historischen Stahlbrücke in der Hamburger Speicherstadt. Der Obergurt ist fachwerkartig aufgelöst und zeugt von hoher Handwerkskunst."
+    en: "The image shows a section of a riveted top chord of a historic steel bridge in the Hamburg Speicherstadt. The top chord is designed as a truss beam, demonstrating high craftsmanship."
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+
+- src: "/assets/images/gallery/downloads/24-03-11-57010.jpg"
+  title:
+    de: "Alter Elbtunnel, Hamburg"
+    en: "Old Elbe Tunnel, Hamburg"
+  alt:
+    de: "Das Bild zeigt eine der Röhren des Alten Elbtunnels in Hamburg. Die Röhre ist mit Fliesen verkleidet und wird von einer Reihe von Lampen beleuchtet, die sich in der glänzenden Oberfläche spiegeln. Mehrere Fahrradfahrer fahren vorbei und sind als verwischte Konturen zu erkennen."
+    en: "The image shows the Old Elbe Tunnel in Hamburg. The tunnel is tiled and illuminated by a row of lamps, which are reflected in the glossy surface. Several cyclists pass by and are visible as blurred outlines."
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+
+- src: "/assets/images/gallery/downloads/24-06-20-57519.jpg"
+  title:
+    de: "Schleusengang, Mittellandkanal"
+    en: "Lock Passage, Mittelland Canal"
+  alt:
+    de: "Durch das Fenster der Schiffsbrücke fotografiert, sieht man einige Frachtschiffe in der Schleuse Anderten am Mittellandkanal kurz vor dem Öffnen der Schleusentore. Im Wasser spiegelt sich die Abendsonne."
+    en: "Photographed through the window of the ship's bridge, you can see some cargo ships in the Anderten lock on the Mittelland Canal shortly before the lock gates open. The evening sun is reflected in the water."
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+
+- src: "/assets/images/gallery/downloads/24-06-20-57546.jpg"
+  title:
+    de: "Volkswagen-Werk, Wolfsburg"
+    en: "Volkswagen Factory, Wolfsburg"
+  alt:
+    de: "Die vier Schornsteine des Volkswagen-Werks in Wolfsburg ragen in den bewölkten Himmel und spiegeln sich im Wasser des Mittellandkanals. Durch die braun-graue Farbpalette und die bedeckte Lichtsituation herrscht eine bedrückte Stimmung."
+    en: "The four chimneys of the Volkswagen Factory in Wolfsburg rise into the cloudy sky and are reflected in the water of the Mittelland Canal. The brown-gray color palette and the overcast lighting create a gloomy atmosphere. "
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+
+- src: "/assets/images/gallery/downloads/24-09-12-64956.jpg"
+  title:
+    de: "Eingestürzte Carola-Brücke, Dresden"
+    en: "Collapsed Carola Bridge, Dresden"
+  alt:
+    de: "Das Bild zeigt den Eingestürzten Brückenzug C der Carola-Brücke in Dresden. Die Trümmer der Stromöffnung liegen im Wasser, während die Spannweite über den Elbwiesen sichtbar durchhängt. Im Vordergrund sind Schaulustige zu sehen, im Hintergrund die Sächsische Staatskanzlei."
+    en: "The photo shows the collapsed Bridge Section C of the Carola Bridge in Dresden. The debris from the river opening lies in the water, while the span over the Elbe meadows is visibly sagging. Onlookers can be seen in the foreground, with the Saxon State Chancellery in the background."
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+
+- src: "/assets/images/gallery/downloads/24-11-30-66756.jpg"
+  title:
+    de: "Plattenbau, Berlin"
+    en: "Plattenbau, Berlin"
+  alt:
+    de: "Das Bild zeigt die Fassade eines typischen Plattenbaus in Berlin-Mitte. Der Ausschnitt ist so gewählt, dass man kein Gefühl für die Gesamtgröße des Gebäudes bekommt. Die sich wiederholenden Linien und Strukturen zeugen von der rationslisierten Bauweise."
+    en: "The photo shows the facade of a typical prefabricated building (Plattenbau) in Berlin-Mitte. The picture is composed in such a way that one cannot get a sense of the building’s overall size. The repetitive lines and structures are characteristic of this rationalized style of construction."
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+
+- src: "/assets/images/gallery/downloads/24-11-30-66786.jpg"
+  title:
+    de: "Paul-Löbe-Haus, Berlin"
+    en: "Paul Löbe House, Berlin"
+  alt:
+    de: "Das Bild zeigt einen Ausschnitt der Glasfassade und des Dachs des Paul-Löbe-Hauses in Berlin. Der sich im Fenster spiegelnde, wolkenlose Himmel lässt die schwere Betonplatte des Dachs schwebend wirken."
+    en: "The photo shows a detail of the glass facade and roof of the Paul Löbe House in Berlin. The cloudless sky reflected in the window makes the heavy concrete roof slab appear to be floating."
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+
+- src: "/assets/images/gallery/downloads/24-11-30-66829.jpg"
+  title:
+    de: "Bundeskanzleramt, Berlin"
+    en: "Federal Chancellery, Berlin"
+  alt:
+    de: "Das Bild zeigt das Bundeskanzleramt in Berlin, fotografiert vom Haus der Kulturen der Welt (ehemalige Kongresshalle bzw. 'Schwangere Auster'). Im Vordergrund weht unscharf ein regenbogenfarbiger Vorhang, der im Kontrast zu der modernen Glas- und Betonarchitektur steht."
+    en: "The photo shows the Federal Chancellery in Berlin, photographed from the House of World Cultures (former Congress Hall or 'Pregnant Oyster'). In the foreground, a rainbow-colored curtain is waving out of focus, contrasting with the modern glass and concrete architecture."
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+
+- src: "/assets/images/gallery/downloads/25-03-01-68433.jpg"
+  title:
+    de: "Theaterplatz, Dresden"
+    en: "Theaterplatz, Dresden"
+  alt:
+    de: "Das Bild zeigt eine Nachtszene auf dem Theaterplatz in Dresden. Im Vordergrund ist das Reiterstandbild von König Johann. zu sehen, während im Hintergrund eine Straßenbahn der Dresdener Verkehrsbetriebe vorbeifährt. Durch die Langzeitaufnahme erzeugt sie einen langen, gelb-weiß-roten Schweif. Die Straßenlaternen leichten sternförmig."
+    en: "The photo shows a nighttime scene on Theaterplatz in Dresden. In the foreground is the equestrian statue of King Johann, while in the background a Dresden public transit tram passes by. Because it was taken with a long exposure, the tram leaves a long, yellow-white-red trail. The streetlights form a faint star shape."
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
   featured: true
+
+- src: "/assets/images/gallery/downloads/25-03-21-68816.jpg"
+  title:
+    de: "Göltzschtalbrücke, Mylau"
+    en: "Göltzschtal Bridge, Mylau"
+  alt:
+    de: "Blick entlang der Öffnungen der ersten Zwischenebene der Göltzschtalbrücke in Mylau, Vogtland. Das Viadukt ist die größte Ziegelsteinbrücke der Welt."
+    en: "A view along the openings of the first intermediate level of the Göltzschtal Bridge in Mylau, Vogtland. The viaduct is the largest brick bridge in the world. "
   license: "CC BY 4.0"
   licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
 
-- title:
-    de: "Beispielbild 03, hochkant"
-    en: "Example picture 03, portrait"
-  src: "/assets/images/gallery/example_portrait.jpg"
+- src: "/assets/images/gallery/downloads/25-03-22-68903.jpg"
+  title:
+    de: "Ulmer Münster"
+    en: "Ulm Minster"
   alt:
-    de: "Beispielbild 03, hochkant"
-    en: "Example picture 03, portrait"
-  type: "portrait"
+    de: "EIn Blick nach oben im Mittelschiff des Ulmer Münsters. Die verzierten gotischen Säulen und Spitzbögen tragen das Dach mit Leichtigkeit. Das in den bunten Kirchenfenstern gebrochene Licht erzeugt eine warme Atmosphäre."
+    en: "A view upward in the central nave of Ulm Minster. The ornate Gothic columns and pointed arches support the roof with ease. The light filtering through the colorful stained-glass windows creates a warm atmosphere."
   license: "CC BY 4.0"
   licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
 
-- title:
-    de: "Beispielbild 04, Landschaft"
-    en: "Example picture 04, landscape"
-  src: "/assets/images/gallery/example_landscape.jpg"
+- src: "/assets/images/gallery/downloads/25-03-23-69037.jpg"
+  title:
+    de: "Ulmer Münster"
+    en: "Ulm Minster"
   alt:
-    de: "Beispielbild 04, Landschaft"
-    en: "Example picture 04, landscape"
-  type: "landscape"
-  # featured: true
+    de: "Zu sehen ist die Spitze des Ulmer Münsters vom obersten Aussichtsdeck aus. Filigrane gotische Spitzbögen und Strebepfeiler tragen die Spize des zweithöchsten Kirchturms weltweit."
+    en: "The spire of Ulm Minster can be seen from the top observation deck. Delicate Gothic pointed arches and buttresses support the spire of the second-tallest church tower in the world."
   license: "CC BY 4.0"
   licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
 
-- title:
-    de: "Beispielbild 05, hochkant"
-    en: "Example picture 05, portrait"
-  src: "/assets/images/gallery/example_portrait.jpg"
+- src: "/assets/images/gallery/downloads/25-06-05-69745.jpg"
+  title:
+    de: "Campusbrücke Vaihingen, Universität Stuttgart"
+    en: "Campus Bridge Vaihingen, University of Stuttgart"
   alt:
-    de: "Beispielbild 05, hochkant"
-    en: "Example picture 05, portrait"
-  type: "portrait"
+    de: "Untersicht der filigranen Campusbrücke über die Allmandring auf dem Campus Vaihingen der Universität Stuttgart, darauf zwei Passanten."
+    en: "A view from below of the delicate campus bridge spanning Allmandring on the University of Stuttgart’s Vaihingen campus, with two pedestrians on it."
   license: "CC BY 4.0"
   licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
 
-- title:
-    de: "Beispielbild 06, Landschaft"
-    en: "Example picture 06, landscape"
-  src: "/assets/images/gallery/example_landscape.jpg"
+- src: "/assets/images/gallery/downloads/25-06-06-69888.jpg"
+  title:
+    de: "Max-Eyth-Steg, Stuttgart"
+    en: "Max Eyth Footbridge, Stuttgart"
   alt:
-    de: "Beispielbild 06, Landschaft"
-    en: "Example picture 06, landscape"
-  type: "landscape"
+    de: "Hauptkabel des Max-Eyth-Stegs in Stuttgart. Detailansicht eines Hängeseil-Paares. Im Hintergrund unscharf einer der beiden Pylone der leichten Hängebrücke."
+    en: "Main cables of the Max-Eyth Bridge in Stuttgart. Close-up view of a pair of suspension cables. In the background, blurred, is one of the two pylons of the lightweight suspension bridge."
   license: "CC BY 4.0"
   licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
 
-- title:
-    de: "Beispielbild 07, hochkant"
-    en: "Example picture 07, portrait"
-  src: "/assets/images/gallery/example_portrait.jpg"
+- src: "/assets/images/gallery/downloads/25-06-06-70086.jpg"
+  title:
+    de: "Neckarbrücke, Benningen"
+    en: "Neckar Bridge, Benningen"
   alt:
-    de: "Beispielbild 07, hochkant"
-    en: "Example picture 07, portrait"
-  type: "portrait"
+    de: "Blick auf die Neckarbrücke in Benningen. Die schlanke Spannbetonbrücke war nach dem 2. Weltkrieg eine der ersten Spannbetonbrücken in Deutschland. Im Vordergrund wird die Brücke unscharf durch die Blätter eines Baumes gerahmt."
+    en: "View of the Neckar Bridge in Benningen. The slender prestressed concrete bridge was one of the first prestressed concrete bridges in Germany after World War II. In the foreground, the bridge is framed out of focus by the leaves of a tree."
   license: "CC BY 4.0"
   licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
 
-- title:
-    de: "Beispielbild 08, Landschaft"
-    en: "Example picture 08, landscape"
-  src: "/assets/images/gallery/example_landscape.jpg"
+- src: "/assets/images/gallery/downloads/25-08-17-70145.jpg"
+  title:
+    de: "Wallfahrtskirche Käppele, Würzburg"
+    en: "Käppele Pilgrimage Church, Würzburg"
   alt:
-    de: "Beispielbild 08, Landschaft"
-    en: "Example picture 08, landscape"
-  type: "landscape"
+    de: "Blick auf die Wallfahrtskirche Käppele in Würzburg, gerahmt durch einen Torbogen in den Mauern der Festung Würzburg. Die barocke Kirche thront auf einem Hügel und ist von grünen Bäumen und Weinstöcken."
+    en: "View of the Käppele Pilgrimage Church in Würzburg, framed by an archway in the walls of the Würzburg Fortress. The baroque church sits atop a hill and is surrounded by green trees and vineyards."
   license: "CC BY 4.0"
   licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
 
-- title:
-    de: "Beispielbild 14, Landschaft"
-    en: "Example picture 14, landscape"
-  src: "/assets/images/gallery/example_landscape.jpg"
+- src: "/assets/images/gallery/downloads/25-08-17-70158.jpg"
+  title:
+    de: "Würzburg von oben"
+    en: "Würzburg from above"
   alt:
-    de: "Beispielbild 14, Landschaft"
-    en: "Example picture 14, landscape"
-  type: "landscape"
+    de: "Das Bild zeigt eine Ansicht der Stadt Würzburg von oben, fotografiert von der Würzburger Festung Marienberg aus. Im Vordergrund ist der Berghang der Festung zu sehen, im Hintergrund die Altstadt mit der Alten Mainbrücke und den diversen Kirchtürmen."
+    en: "The image shows a view of the city of Würzburg from above, photographed from the Würzburg Fortress Marienberg. In the foreground is the hillside of the fortress, in the background the old town with the Alte Mainbrücke (Old Main Bridge) and the various church towers."
   license: "CC BY 4.0"
   licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
 
-- title:
-    de: "Beispielbild 14, Landschaft"
-    en: "Example picture 14, landscape"
-  src: "/assets/images/gallery/example_landscape.jpg"
+- src: "/assets/images/gallery/downloads/26-03-22-72474-58.jpg"
+  title:
+    de: "Pillnitzer Kamelie"
+    en: "Pillnitz Camellia"
   alt:
-    de: "Beispielbild 14, Landschaft"
-    en: "Example picture 14, landscape"
-  type: "landscape"
+    de: "Lichtstrahlen fallen durch die über 250 Jahre alte Pillnitzer Kamelie. Im warmen Gegenlicht glitzern die Wassertropfen der Beneblungsanlage. Die Blüten der Kamelie blühen in einem kräftigen Rotton."
+    en: "Beams of light stream through the Pillnitz camellia, which is over 250 years old. In the warm backlight, the water droplets from the misting system glisten. The camellia’s blossoms bloom in a vibrant shade of red."
   license: "CC BY 4.0"
   licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
 
-- title:
-    de: "Beispielbild 09, hochkant"
-    en: "Example picture 09, portrait"
-  src: "/assets/images/gallery/example_portrait.jpg"
+- src: "/assets/images/gallery/downloads/26-03-22-72474-74.jpg"
+  title:
+    de: "Pillnitzer Kamelie"
+    en: "Pillnitz Camellia"
   alt:
-    de: "Beispielbild 09, hochkant"
-    en: "Example picture 09, portrait"
-  type: "portrait"
+    de: "Nahaufnahme einer einzelnen Blüte der über 250 Jahre alten Pillnitzer Kamelie. Die Kamelie blüht in einem kräftigen Rotton vor einem unscharfen grünen Blätter-Hintergrund. Im warmen Gegenlicht glitzern die Wassertropfen der Beneblungsanlage."
+    en: "A close-up of a single flower from the Pillnitz camellia, which is over 250 years old. The camellia blooms in a rich shade of red against a blurred green backdrop of leaves. In the warm backlight, the water droplets from the misting system glisten."
+  license: "CC BY 4.0"
+  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+  featured: true
+
+- src: "/assets/images/gallery/downloads/26-03-28-72475-33.jpg"
+  title:
+    de: "Neue Fleetbrücke, Speicherstadt Hamburg"
+    en: "New Fleet Bridge, Speicherstadt Hamburg"
+  alt:
+    de: "Blick auf den Kehrwiederfleet der Hamburger Speicherstadt. Im Vordergrund die neue Besucherbrücke des Miniatur-Wunderlands, die den Fleet zwischen zwei Speichergebäuden überspannt. Bewölktes Licht."
+    en: "View of the Kehrwiederfleet in Hamburg's Speicherstadt. In the foreground is the new visitor bridge at Miniatur-Wunderland, which spans the canal between two warehouse buildings. Overcast lighting."
   license: "CC BY 4.0"
   licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
 
-- title:
-    de: "Beispielbild 10, Landschaft"
-    en: "Example picture 10, landscape"
-  src: "/assets/images/gallery/example_landscape.jpg"
+- src: "/assets/images/gallery/downloads/26-03-28-72475-55.jpg"
+  title:
+    de: "Pickhubenbrücke und Neuerwegsbrücke, Speicherstadt Hamburg"
+    en: "Pickhuben Bridge and Neuerwegs Bridge, Speicherstadt Hamburg"
   alt:
-    de: "Beispielbild 10, Landschaft"
-    en: "Example picture 10, landscape"
-  type: "landscape"
+    de: "Die sich gegenseitig überschneidenden Bögen der Pickhubenbrücke und der Neuerwegsbrücke in der Speicherstadt Hamburg. Beides sind genietete Stahlbogenbrücken, deren filigrane Struktur durch die Schwarz-Weiß-Aufnahme hervorgehoben wird."
+    en: "The intersecting arches of the Pickhuben Bridge and the Neuerwegs Bridge in Hamburg's Speicherstadt. Both are riveted steel arch bridges, whose delicate structure is highlighted by the black-and-white photograph."
   license: "CC BY 4.0"
   licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
 
-- title:
-    de: "Beispielbild 11, hochkant"
-    en: "Example picture 11, portrait"
-  src: "/assets/images/gallery/example_portrait.jpg"
+- src: "/assets/images/gallery/downloads/26-03-28-72475-62.jpg"
+  title:
+    de: "Verbindungsbrücke über den Brooksfleet, Speicherstadt Hamburg"
+    en: "Skyway Bridge over the Brooksfleet, Speicherstadt Hamburg"
   alt:
-    de: "Beispielbild 11, hochkant"
-    en: "Example picture 11, portrait"
-  type: "portrait"
+    de: "Speichergebäude und Verbindungsbrücke über den Brooksfleet in der Hamburger Speicherstadt. Die Form der quadratischen Öffnungen des Vierendeel-Trägers wird auch in den Fassaden der angrenzenden Speichergebäude aufgenommen: Im rechten Gebäude ist dies eine Backsteinfassade mit regelmäßigen rechteckigen, gitterartigen Öffnungen; auf der linken Seite sieht man ein modernes Stahl- und Stahlbetongebäude mit verglasten Fensterbändern.   "
+    en: "Warehouse buildings and a connecting skyway bridge over the Brooksfleet in Hamburg’s Speicherstadt. The shape of the square openings in the Vierendeel truss is also reflected in the facades of the adjacent warehouse buildings: The building on the right features a brick facade with regular, rectangular, lattice-like openings; on the left, a modern steel and reinforced concrete building with bands of glass windows is visible."
   license: "CC BY 4.0"
   licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
 
-- title:
-    de: "Beispielbild 12, Landschaft"
-    en: "Example picture 12, landscape"
-  src: "/assets/images/gallery/example_landscape.jpg"
+- src: "/assets/images/gallery/downloads/26-03-28-72475-65-2.jpg"
+  title:
+    de: "Johan-van-Valkenburgh-Brücke, Hamburg"
+    en: "Johan-van-Valkenburgh Bridge, Hamburg"
   alt:
-    de: "Beispielbild 12, Landschaft"
-    en: "Example picture 12, landscape"
-  type: "landscape"
+    de: "Ansicht der Johan-van-Valkenburgh-Brücke, Hamburg. Die geschwungene Form des gevouteten Kragträgers wird durch die Schwarz-Weiß-Aufnahme betont. Im Vordergrund sind die Blumen des ehemaligen IGA-Parks zu sehen, im Hintergrund der bewölkte Himmel."
+    en: "View of the Johan van Valkenburgh Bridge in Hamburg. The curved shape of the haunched cantilever is emphasized by the black-and-white photograph. In the foreground are the flowers of the former IGA Park; in the background is the cloudy sky."
   license: "CC BY 4.0"
   licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
 
-- title:
-    de: "Beispielbild 13, hochkant"
-    en: "Example picture 13, portrait"
-  src: "/assets/images/gallery/example_portrait.jpg"
+- src: "/assets/images/gallery/downloads/26-03-29-72475-5-2.jpg"
+  title:
+    de: "Kennedybrücke, Hamburg"
+    en: "Kennedy Bridge, Hamburg"
   alt:
-    de: "Beispielbild 13, hochkant"
-    en: "Example picture 13, portrait"
-  type: "portrait"
+    de: "Schräge Untersicht der Kennedybrücke in Hamburg. Die kontrastreiche Schwarz-Weiß-Aufnahme zeigt den geschwungenen Überbau und die Schlankheit der Brücke. Im Hintergrund sind die teilweise geschlossenen Untergurte der Plattenbalkenbrücke zu sehen."
+    en: "An oblique view from below of the Kennedy Bridge in Hamburg. This high-contrast black-and-white photograph shows the curved superstructure and the slenderness of the bridge. In the background, the partially closed lower chords of the slab-girder bridge are visible."
   license: "CC BY 4.0"
   licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+  featured: true
 
-- title:
-    de: "Beispielbild 13, hochkant"
-    en: "Example picture 13, portrait"
-  src: "/assets/images/gallery/example_portrait.jpg"
+- src: "/assets/images/gallery/downloads/26-03-29-72475-11-2.jpg"
+  title:
+    de: "IGA-Brücke, Alsterpark Hamburg"
+    en: "IGA Bridge, Alsterpark Hamburg"
   alt:
-    de: "Beispielbild 13, hochkant"
-    en: "Example picture 13, portrait"
-  type: "portrait"
-  license: "CC BY 4.0"
-  licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
-
-- title:
-    de: "Beispielbild 14, Landschaft"
-    en: "Example picture 14, landscape"
-  src: "/assets/images/gallery/example_landscape.jpg"
-  alt:
-    de: "Beispielbild 14, Landschaft"
-    en: "Example picture 14, landscape"
-  type: "landscape"
+    de: "Schrägansicht der IGA-Brücke im Hamburger Alsterpark. Die schlanke Spannbetonbrücke ist leicht bogenförmig und besitzt ein filigranes Füllstabgeländer. Rechts sind zwei Passanten mit Hund zu sehen, die über die Brücke gehen."
+    en: "An oblique view of the IGA Bridge in Hamburg’s Alsterpark. The slender prestressed concrete bridge is slightly arched and features a delicate guardrail. On the right, two pedestrians with a dog can be seen walking across the bridge."
   license: "CC BY 4.0"
   licenseUrl: "https://creativecommons.org/licenses/by/4.0/"

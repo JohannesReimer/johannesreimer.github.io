@@ -24,11 +24,19 @@ redirect_from:
       {% assign title_de = item.title.de %}
       {% assign title_en = item.title.en %}
       {% assign alt_text = item.alt[page.lang] | default: item.alt.en | default: item.alt.de %}
+      {% comment %} Derive thumb/preview/download paths from src if not explicitly set {% endcomment %}
+      {% assign src_full = item.src %}
+      {% assign src_filename = src_full | split: "/" | last %}
+      {% assign src_base = src_filename | split: "." | first %}
+      {% assign src_thumb    = item.src-thumb    | default: "/assets/images/gallery/thumbs/"     | append: src_base | append: ".jpg" %}
+      {% assign src_preview  = item.src-preview  | default: "/assets/images/gallery/previews/"   | append: src_base | append: ".jpg" %}
+      {% assign src_download = item.src-download | default: "/assets/images/gallery/downloads/"  | append: src_base | append: ".jpg" %}
       <button
         type="button"
         class="gallery-item{% if item.featured %} featured{% endif %}"
         data-gallery-trigger
-        data-src="{{ item.src | relative_url }}"
+        data-src="{{ src_preview | relative_url }}"
+        data-src-download="{{ src_download | relative_url }}"
         data-alt="{{ alt_text }}"
         data-title-de="{{ title_de }}"
         data-title-en="{{ title_en }}"
@@ -40,7 +48,9 @@ redirect_from:
         data-focal-length="{{ item.camera.focal_length }}"
         aria-label="{{ alt_text }}"
       >
-        <img src="{{ item.src | relative_url }}" alt="{{ alt_text }}" />
+        <span class="gallery-item-inner">
+          <img src="{{ src_thumb | relative_url }}" alt="{{ alt_text }}" loading="lazy" />
+        </span>
       </button>
     {% endfor %}
   </div>
@@ -53,11 +63,13 @@ redirect_from:
   hidden
 >
   <button type="button" class="gallery-modal-close" aria-label="Close image preview" ><i class="fa-solid fa-xmark"></i></button>
+  <a id="gallery-modal-download" class="gallery-modal-download" download aria-label="Download image"><i class="fa-solid fa-download"></i></a>
   <div class="gallery-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="gallery-modal-title">
     <div class="gallery-modal-image-wrap">
       <button type="button" class="gallery-nav gallery-nav-prev" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
       <button type="button" class="gallery-nav gallery-nav-next" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
       <img id="gallery-modal-image" src="" alt="" />
+      <button type="button" class="gallery-modal-info" aria-label="Show image info"><i class="fa-solid fa-circle-info"></i></button>
     </div>
     <div class="gallery-modal-meta">
       <div class="gallery-modal-meta-text">
@@ -86,6 +98,7 @@ redirect_from:
     const modalCamera = document.getElementById('gallery-modal-camera');
     const modalCameraWrap = document.getElementById('gallery-modal-camera-wrap');
     const closeButton = document.querySelector('.gallery-modal-close');
+    const downloadLink = document.getElementById('gallery-modal-download');
     const navPrev = document.querySelector('.gallery-nav-prev');
     const navNext = document.querySelector('.gallery-nav-next');
     const triggers = document.querySelectorAll('[data-gallery-trigger]');
@@ -138,7 +151,7 @@ redirect_from:
 
     function formatShutter(seconds) {
       if (!seconds) return null;
-      if (seconds >= 1) return seconds.toFixed(1).replace('.0', '') + 's';
+      if (seconds >= 1) return seconds.toFixed(1).replace('.0', '');
       const denom = Math.round(1 / seconds);
       return '1/' + denom;
     }
@@ -153,6 +166,7 @@ redirect_from:
 
     function loadImageData(button) {
       const source = button.dataset.src || '';
+      const sourceDownload = button.dataset.srcDownload || source;
       const alt = button.dataset.alt || '';
       modal.dataset.currentSource = source;
       modal.dataset.titleDe = button.dataset.titleDe || '';
@@ -161,6 +175,7 @@ redirect_from:
       modal.dataset.licenseUrl = button.dataset.licenseUrl || '#';
       modalImage.src = source;
       modalImage.alt = alt;
+      if (downloadLink) { downloadLink.href = sourceDownload; }
 
       // Reset camera display while loading
       applyCameraData(
@@ -214,6 +229,7 @@ redirect_from:
 
         currentIndex = newIndex;
         loadImageData(triggersArray[currentIndex]);
+        modalDialog.classList.remove('meta-visible');
 
         modalDialog.classList.add(enterClass);
         modalDialog.addEventListener('animationend', function onEnter() {
@@ -233,6 +249,7 @@ redirect_from:
       modalTitle.textContent = '';
       modalLicense.textContent = '';
       modalLicense.href = '#';
+      modalDialog.classList.remove('meta-visible');
       delete modal.dataset.currentSource;
     }
 
@@ -254,6 +271,22 @@ redirect_from:
       });
     }
 
+    // Touch: info button toggles meta, image click hides meta
+    var isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+    if (isTouch) {
+      modal.classList.add('touch-mode');
+      var infoButton = document.querySelector('.gallery-modal-info');
+      if (infoButton) {
+        infoButton.addEventListener('click', function (event) {
+          event.stopPropagation();
+          modalDialog.classList.toggle('meta-visible');
+        });
+      }
+      modalImage.addEventListener('click', function () {
+        modalDialog.classList.remove('meta-visible');
+      });
+    }
+
     if (closeButton) {
       closeButton.addEventListener('click', closeModal);
     }
@@ -265,8 +298,13 @@ redirect_from:
     });
 
     document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape' && !modal.hidden) {
+      if (modal.hidden) return;
+      if (event.key === 'Escape') {
         closeModal();
+      } else if (event.key === 'ArrowLeft') {
+        navigateTo((currentIndex - 1 + triggersArray.length) % triggersArray.length, 'prev');
+      } else if (event.key === 'ArrowRight') {
+        navigateTo((currentIndex + 1) % triggersArray.length, 'next');
       }
     });
 
@@ -283,6 +321,16 @@ redirect_from:
 <script>
   (function () {
     const galleryGrid = document.querySelector('.gallery-grid');
+
+    // Shuffle gallery items for random order on each page load
+    if (galleryGrid) {
+      var items = Array.from(galleryGrid.querySelectorAll('.gallery-item'));
+      for (var i = items.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = items[i]; items[i] = items[j]; items[j] = tmp;
+      }
+      items.forEach(function(el) { galleryGrid.appendChild(el); });
+    }
 
     function initMasonry() {
       if (galleryGrid && window.Masonry) {
@@ -344,6 +392,25 @@ redirect_from:
         });
         masonryInstance.reloadItems();
         masonryInstance.layout();
+      }
+    });
+
+    // Apply random rotation to featured items (-2° or 2°)
+    function applyFeaturedRotation() {
+      var featuredItems = document.querySelectorAll('.gallery-item.featured');
+      featuredItems.forEach(function(item) {
+        var angle = Math.random() < 0.5 ? -2 : 2;
+        item.style.setProperty('--featured-rotation', 'rotate(' + angle + 'deg)');
+      });
+    }
+
+    // Apply featured rotation on initial load
+    applyFeaturedRotation();
+
+    // Reapply featured rotation on shuffle
+    document.addEventListener('click', function(e) {
+      if (e.target.matches('[data-shuffle-gallery]')) {
+        setTimeout(applyFeaturedRotation, 100);
       }
     });
   })();
