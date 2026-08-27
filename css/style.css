@@ -725,7 +725,6 @@ main :where(ul, ol):not(.todo-list) > li {
   width: calc(20% - 24px * 4 / 5);
   padding: 0;
   border: none;
-  background: transparent;
   text-align: left;
   cursor: pointer;
   border-radius: 12px;
@@ -748,7 +747,7 @@ main :where(ul, ol):not(.todo-list) > li {
   border-radius: 12px;
 }
 
-.gallery-item::before {
+.gallery-item-inner::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -760,8 +759,8 @@ main :where(ul, ol):not(.todo-list) > li {
   -webkit-backdrop-filter: blur(2px);
 }
 
-.gallery-item:hover::before,
-.gallery-item:focus-visible::before {
+.gallery-item:hover .gallery-item-inner::before,
+.gallery-item:focus-visible .gallery-item-inner::before {
   opacity: 1;
 }
 
@@ -770,7 +769,7 @@ main :where(ul, ol):not(.todo-list) > li {
   box-shadow: 0 12px 22px rgba(0, 0, 0, 0.14);
 }
 
-.gallery-item::after {
+.gallery-item-inner::after {
   content: "⤢";
   position: absolute;
   top: 50%;
@@ -791,14 +790,15 @@ main :where(ul, ol):not(.todo-list) > li {
   -webkit-backdrop-filter: blur(2px);
 }
 
-.gallery-item:hover::after,
-.gallery-item:focus-visible::after {
+.gallery-item:hover .gallery-item-inner::after,
+.gallery-item:focus-visible .gallery-item-inner::after {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
 }
 
 .gallery-item-inner {
   display: block;
+  position: relative;
 }
 
 .gallery-item img {
