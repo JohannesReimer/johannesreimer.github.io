@@ -736,13 +736,14 @@ main :where(ul, ol):not(.todo-list) > li {
 }
 
 .gallery-item.featured {
-  width: calc(40% - 24px * 4 / 5 * 2 + 24px + 0.7rem);
+  width: calc(40% - 24px * 4 / 5 * 2 + 24px);
   margin-bottom: 16px;
+  background-color: var(--nav-background);
 }
 
 .gallery-item.featured .gallery-item-inner {
   display: block;
-  transform: var(--featured-rotation, rotate(-2deg));
+  transform: var(--featured-rotation, rotate(-3deg));
   box-shadow: 3px 3px 0 var(--h1-color);
   border-radius: 12px;
 }
@@ -799,6 +800,7 @@ main :where(ul, ol):not(.todo-list) > li {
 .gallery-item-inner {
   display: block;
   position: relative;
+  z-index: 1000;
 }
 
 .gallery-item img {

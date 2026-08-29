@@ -399,7 +399,7 @@ redirect_from:
     function applyFeaturedRotation() {
       var featuredItems = document.querySelectorAll('.gallery-item.featured');
       featuredItems.forEach(function(item) {
-        var angle = Math.random() < 0.5 ? -2 : 2;
+        var angle = Math.random() < 0.5 ? -3 : 3;
         item.style.setProperty('--featured-rotation', 'rotate(' + angle + 'deg)');
       });
     }
